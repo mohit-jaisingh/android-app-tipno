@@ -168,8 +168,6 @@ public class AddNewPandit extends AppCompatActivity {
             }
         });
 
-        city
-
         mSaveButton = findViewById(R.id.add_pandit_button);
         System.out.println("Creating new pandit record");
 

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "781226246132",
+    "project_id": "sindhi-sangat",
+    "storage_bucket": "sindhi-sangat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781226246132:android:e6db2897629c0ab78b03a1",
+        "android_client_info": {
+          "package_name": "com.SindhiManu.SindhiSangat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781226246132-d16pfaosucqcsvcma8gpb8vd7con29mi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.SindhiManu.SindhiSangat",
+            "certificate_hash": "30d6b05381ac3a87a508f5ece4ab71cc291c8f1f"
+          }
+        },
+        {
+          "client_id": "781226246132-2tdkvte7qa7f76rls46da6tgl6khjr4h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdt7tkxpnlH-L4veR9ZwbJjjZbTnKxvjM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781226246132-2tdkvte7qa7f76rls46da6tgl6khjr4h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

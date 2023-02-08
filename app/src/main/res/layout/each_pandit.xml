@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Theme.AppCompat.NoActionBar"
+    android:layout_margin="15dp">
+    
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp">
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/pandit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pandit"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pandit_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NameOfPandit"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/pandit_text"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pandit_address_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address:"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pandit_text" />
+
+            <TextView
+                android:id="@+id/pandit_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This is a sample address, Street name, locality"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:layout_marginLeft="15dp"
+                app:layout_constraintStart_toEndOf="@id/pandit_address_text"
+                app:layout_constraintTop_toBottomOf="@+id/pandit_name" />
+
+            <TextView
+                android:id="@+id/pandit_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="City,"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:layout_marginLeft="15dp"
+                app:layout_constraintStart_toEndOf="@id/pandit_address_text"
+                app:layout_constraintTop_toBottomOf="@+id/pandit_address" />
+
+            <TextView
+                android:id="@+id/pandit_pincode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="999-999"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:layout_marginLeft="15dp"
+                app:layout_constraintStart_toEndOf="@id/pandit_city"
+                app:layout_constraintTop_toBottomOf="@+id/pandit_address" />
+
+            <TextView
+                android:id="@+id/pandit_phone_nos_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone No:"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:layout_marginLeft="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pandit_city" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/pandit_phone_no_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/pandit_phone_nos_text"
+                app:layout_constraintTop_toBottomOf="@id/pandit_city"/>
+
+            <TextView
+                android:id="@+id/pandit_email_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email Id(s):"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:layout_marginLeft="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pandit_phone_no_list" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/pandit_email_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/pandit_email_text"
+                app:layout_constraintTop_toBottomOf="@id/pandit_phone_no_list"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

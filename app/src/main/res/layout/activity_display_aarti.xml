@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/design_dark_default_color_shadow_dark"
-    tools:context=".DisplayMonth">
+    tools:context="com.SindhiManu.Tipno.DisplayMonth">
 
 
     <ViewFlipper

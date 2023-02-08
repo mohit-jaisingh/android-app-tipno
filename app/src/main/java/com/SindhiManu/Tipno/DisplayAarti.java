@@ -1,11 +1,8 @@
-package com.SindhiManu.tipno;
+package com.SindhiManu.Tipno;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 
 public class DisplayAarti extends AppCompatActivity {
 

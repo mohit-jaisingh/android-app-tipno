@@ -1,4 +1,4 @@
-package com.SindhiManu.tipno;
+package com.SindhiManu.Tipno;
 
 import android.content.Context;
 import android.content.Intent;
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<String> adapterItems;
     TextInputLayout textInputLayout;
 
-    @Override
+    @Override // Hardcoding the view so that phone's display settings do not interfere with UI
     protected void attachBaseContext(Context newBase) {
         final Configuration override = new Configuration(newBase.getResources().getConfiguration());
         override.fontScale = 1.0f;

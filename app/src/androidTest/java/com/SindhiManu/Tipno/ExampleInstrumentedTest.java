@@ -1,4 +1,4 @@
-package com.SindhiManu.tipno;
+package com.SindhiManu.Tipno;
 
 import android.content.Context;
 

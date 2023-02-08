@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Tipno" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.SindhiSangat" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -14,12 +14,13 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.Tipno.NoActionBar">
+    <style name="Theme.SindhiSangat.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
     </style>
 
-    <style name="Theme.Tipno.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.SindhiSangat.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="Theme.Tipno.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.SindhiSangat.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

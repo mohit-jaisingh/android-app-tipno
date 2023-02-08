@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:paddingHorizontal="40dp">
+
+    <soup.neumorphism.NeumorphTextView
+        android:id="@+id/header_app_title"
+        style="@style/Widget.Neumorph.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        android:text="Sindhi Sangat"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:id="@+id/options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header_app_title"
+        android:orientation="vertical"
+        android:paddingTop="15dp">
+
+        <LinearLayout
+            android:id="@+id/buttons_first2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <soup.neumorphism.NeumorphImageButton
+                android:id="@+id/tipno"
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:src="@drawable/calendar_icon"
+                app:neumorph_shapeType="basin" />
+
+            <soup.neumorphism.NeumorphImageButton
+                android:id="@+id/events"
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:padding="25dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/event_colored"
+                app:neumorph_shapeType="basin" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/text_of_options1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tipno_icon_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Tipno"
+                    android:textColor="@color/black"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/events_icon_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Events"
+                    android:textColor="@color/black"
+                    android:textSize="30sp" />
+
+            </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/options2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/options"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:id="@+id/buttons_second2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <soup.neumorphism.NeumorphImageButton
+                android:id="@+id/contacts"
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:padding="20dp"
+                android:layout_weight="1"
+                android:src="@drawable/pandit_monk"
+                app:neumorph_shapeType="basin" />
+
+            <soup.neumorphism.NeumorphImageButton
+                android:id="@+id/aartis"
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:padding="20dp"
+                android:layout_weight="1"
+                android:src="@drawable/diya_aarti"
+                android:scaleType="centerCrop"
+                app:neumorph_shapeType="basin" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/contacts_icon_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Brahmin Mitra Mandal"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:textSize="25sp"
+                />
+
+            <TextView
+                android:id="@+id/aartis_icon_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:gravity="center"
+                android:text="Aarti"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

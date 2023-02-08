@@ -44,9 +44,11 @@ public class AddNewPandit extends AppCompatActivity {
     private NeumorphButton mSaveButton;
 
     TextView state_text_view;
-    TextView city_spinner;
+    TextView city_text_view;
     ArrayList<String> listOfStates;
     ArrayList<String> listOfCities;
+
+    private String selectedState;
     Dialog dialog;
 
     @Override // Hardcoding the view so that phone's display settings do not interfere with UI
@@ -76,7 +78,7 @@ public class AddNewPandit extends AppCompatActivity {
         panditEmail2 = findViewById(R.id.pandit_email_edit_text2);
 
         state_text_view = findViewById(R.id.state_dropdown_text_view);
-        city_spinner = findViewById(R.id.city_dropdown_text_view);
+        city_text_view = findViewById(R.id.city_dropdown_text_view);
 
         listOfStates = new ArrayList<>();
 
@@ -166,6 +168,8 @@ public class AddNewPandit extends AppCompatActivity {
             }
         });
 
+        city
+
         mSaveButton = findViewById(R.id.add_pandit_button);
         System.out.println("Creating new pandit record");
 
@@ -205,7 +209,7 @@ public class AddNewPandit extends AppCompatActivity {
 
 
                     pandit= new Pandit(panditNameEdit.getText().toString(),panditAddressEdit.getText().toString(),
-                            state_text_view.getText().toString(), city_spinner.getText().toString(),
+                            state_text_view.getText().toString(), city_text_view.getText().toString(),
                             pinCode.getText().toString(), phoneNos,emails);
 
                 daoPandit.addPanditToDatabase(pandit).addOnSuccessListener(suc ->{

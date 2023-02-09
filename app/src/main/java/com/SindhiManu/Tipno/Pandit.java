@@ -10,16 +10,20 @@ public class Pandit {
     private String city;
     private String state;
 
+    private String pin;
+
+
     private ArrayList<String> phone_nos;
     private ArrayList<String> email_ids;
 
     public Pandit(){}
 
-    public Pandit(String name, String address, String city, String state,String pin, ArrayList<String> phone_nos, ArrayList<String> email_ids) {
+    public Pandit(String name, String address, String state, String city,String pin, ArrayList<String> phone_nos, ArrayList<String> email_ids) {
         this.name = name;
         this.address = address;
         this.city = city;
         this.state = state;
+        this.pin = pin;
         this.phone_nos = phone_nos;
         for(String ph : phone_nos){
             System.out.println(ph);
@@ -68,6 +72,14 @@ public class Pandit {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public String getPin() {
+        return pin;
+    }
+
+    public void setPin(String pin) {
+        this.pin = pin;
     }
 
     public ArrayList<String> getPhone_nos() {

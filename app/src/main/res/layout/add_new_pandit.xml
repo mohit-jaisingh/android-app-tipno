@@ -87,9 +87,9 @@
         android:textSize="20sp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="@id/address_text"
-        app:layout_constraintTop_toBottomOf="@id/address_text"/>
+        app:layout_constraintTop_toBottomOf="@id/pandit_address_edit_text"/>
 
     <TextView
         android:layout_width="250dp"
@@ -98,12 +98,13 @@
         android:hint="Select State"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:layout_margin="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="20dp"
         android:textColorHint="@color/secondary_text"
         android:gravity="center_vertical"
         android:background="@android:drawable/editbox_background"
         app:layout_constraintStart_toEndOf="@+id/state_text"
-        app:layout_constraintTop_toBottomOf="@+id/address_text"
+        app:layout_constraintTop_toBottomOf="@+id/pandit_address_edit_text"
         app:drawableEndCompat="@drawable/ic_down_arrow" />
 
 <!--    <Spinner-->
@@ -126,9 +127,9 @@
         android:textSize="20sp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="@id/name_text"
-        app:layout_constraintTop_toBottomOf="@id/state_text"/>
+        app:layout_constraintTop_toBottomOf="@id/state_dropdown_text_view"/>
 
     <TextView
         android:layout_width="150dp"
@@ -137,7 +138,7 @@
         android:hint="Select City"
         app:boxStrokeColor="@color/black"
         android:textColorHint="@color/secondary_text"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:textSize="20sp"
         android:layout_marginLeft="15dp"
         android:gravity="center_vertical"
@@ -145,7 +146,7 @@
         android:background="@android:drawable/editbox_background"
 
         app:layout_constraintStart_toEndOf="@+id/city_text"
-        app:layout_constraintTop_toBottomOf="@+id/state_text"
+        app:layout_constraintTop_toBottomOf="@+id/state_dropdown_text_view"
         />
 
 <!--    <Spinner-->
@@ -165,13 +166,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:text="PIN"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/city_dropdown_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/state_text" />
+        app:layout_constraintTop_toBottomOf="@+id/state_dropdown_text_view" />
 
     <EditText
         android:id="@+id/entered_pin"

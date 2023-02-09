@@ -19,7 +19,10 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import soup.neumorphism.NeumorphButton;
 
@@ -28,27 +31,21 @@ public class AddNewPandit extends AppCompatActivity {
 //    public static final String TAG = "AddNewPandit";
     private EditText panditNameEdit;
     private EditText panditAddressEdit;
-    private EditText panditPhoneMain;
-    private EditText panditPhone2;
-    private EditText panditPhone3;
-    private EditText panditPhone4;
-    private EditText panditEmailMain;
-    private EditText panditEmail2;
-
     private EditText pinCode;
+    private EditText panditPhoneMain, panditPhone2, panditPhone3, panditPhone4;
+    private EditText panditEmailMain, panditEmail2;
 
-
-    private ArrayList<String> phoneNos = new ArrayList<>();
-    private ArrayList<String> emails = new ArrayList<>();
+    private ArrayList<String> phoneNos;
+    private ArrayList<String> emails;
 
     private NeumorphButton mSaveButton;
 
     TextView state_text_view;
     TextView city_text_view;
     ArrayList<String> listOfStates;
-    ArrayList<String> listOfCities;
+    int listOfCities;
 
-    private String selectedState;
+    private String selectedState, selectedCity;
     Dialog dialog;
 
     @Override // Hardcoding the view so that phone's display settings do not interfere with UI
@@ -110,15 +107,14 @@ public class AddNewPandit extends AppCompatActivity {
         listOfStates.add("Uttarakhand");
         listOfStates.add("Uttar Pradesh");
         listOfStates.add("West Bengal");
-
+        listOfStates.add("Dadra and Nagar Haveli");
         listOfStates.add("Andaman and Nicobar Islands");
         listOfStates.add("Chandigarh");
-        listOfStates.add("Daman & Diu");
-        listOfStates.add("The Government of NCT of Delhi");
-        listOfStates.add("Jammu & Kashmir");
+        listOfStates.add("Daman and Diu");
+        listOfStates.add("Jammu and Kashmir");
         listOfStates.add("Ladakh");
         listOfStates.add("Lakshadweep");
-        listOfStates.add("Puducherry (Pondicherry)");
+        listOfStates.add("Puducherry");
 
         state_text_view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,12 +157,72 @@ public class AddNewPandit extends AppCompatActivity {
                         // set selected item on textView
                         state_text_view.setText(adapter.getItem(position));
                         state_text_view.setTextColor(getColor(R.color.black));
+                        selectedState=state_text_view.getText().toString();
+                        // Dismiss dialog
+                        dialog.dismiss();
+                    }
+                });
+            }
+
+        });
+
+        city_text_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedState = state_text_view.getText().toString();
+                if(selectedState.isEmpty()){
+                    Toast.makeText(AddNewPandit.this, "Enter State first", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                dialog = new Dialog(AddNewPandit.this);
+                dialog.setContentView(R.layout.dialog_searchable_spinner_cities);
+                dialog.getWindow().setLayout(650,800);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+                dialog.show();
+
+                EditText editText=dialog.findViewById(R.id.edit_text_cities);
+                ListView listView=dialog.findViewById(R.id.list_view_cities);
+
+                listOfCities = getListOfCities(selectedState);
+                List<String> Cities = Arrays.asList(getResources().getStringArray(listOfCities));
+                ArrayAdapter<String> adapter=new ArrayAdapter<>(AddNewPandit.this, android.R.layout.simple_list_item_1,Cities);
+
+                listView.setAdapter(adapter);
+                editText.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                        adapter.getFilter().filter(s);
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+
+                    }
+
+                });
+
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        // when item selected from list
+                        // set selected item on textView
+                        city_text_view.setText(adapter.getItem(position));
+                        selectedCity = city_text_view.getText().toString();
+                        city_text_view.setTextColor(getColor(R.color.black));
                         // Dismiss dialog
                         dialog.dismiss();
                     }
                 });
             }
         });
+
+
 
         mSaveButton = findViewById(R.id.add_pandit_button);
         System.out.println("Creating new pandit record");
@@ -175,6 +231,8 @@ public class AddNewPandit extends AppCompatActivity {
 
         mSaveButton.setOnClickListener(v -> {
             Pandit pandit;
+            phoneNos = new ArrayList<>();
+            emails = new ArrayList<>();
 
             if(panditPhoneMain.getText().toString().length() == 10){ //collecting entered phone no in phoneNos arrayList
                 System.out.println("Adding phone no." + panditPhoneMain.getText().toString());
@@ -191,6 +249,7 @@ public class AddNewPandit extends AppCompatActivity {
                     phoneNos.add(panditPhone4.getText().toString());
                     System.out.println("Adding phone no." + panditPhone4.getText().toString());
                 }
+                System.out.println("ph nos added: " + phoneNos.size());
             }
 
             if(panditEmailMain.getText().toString().length() > 0){ //collecting entered emails in email ArrayList
@@ -201,12 +260,12 @@ public class AddNewPandit extends AppCompatActivity {
             }
 
             //Validating data before Entry to Database
-            if(validateData(panditNameEdit.getText().toString(),panditAddressEdit.getText().toString(),panditPhoneMain.getText().toString(),
+            if(validateData(panditNameEdit.getText().toString().trim(),panditAddressEdit.getText().toString().trim(),selectedState,selectedCity,panditPhoneMain.getText().toString(),
                     panditPhone2.getText().toString(),panditPhone3.getText().toString(), panditPhone4.getText().toString(),
                     panditEmailMain.getText().toString(),panditEmail2.getText().toString(),pinCode.getText().toString())){
 
 
-                    pandit= new Pandit(panditNameEdit.getText().toString(),panditAddressEdit.getText().toString(),
+                    pandit= new Pandit(panditNameEdit.getText().toString().trim(),panditAddressEdit.getText().toString(),
                             state_text_view.getText().toString(), city_text_view.getText().toString(),
                             pinCode.getText().toString(), phoneNos,emails);
 
@@ -226,11 +285,15 @@ public class AddNewPandit extends AppCompatActivity {
 
         });
 
+
     }
 
     public void clear() {
         panditNameEdit.setText("");
         panditAddressEdit.setText("");
+        state_text_view.setText("");
+        city_text_view.setText("");
+        pinCode.setText("");
         panditPhoneMain.setText("");
         panditPhone2.setText("");
         panditPhone3.setText("");
@@ -239,21 +302,83 @@ public class AddNewPandit extends AppCompatActivity {
         panditEmail2.setText("");
     }
 
+    public int getListOfCities(String selectedState){
+
+        switch (selectedState){
+            case "Select Your State": return(R.array.array_default_districts);
+            case "Andhra Pradesh": return (R.array.array_andhra_pradesh_districts);
+            case "Arunachal Pradesh": return (R.array.array_arunachal_pradesh_districts);
+            case "Assam": return (R.array.array_assam_districts);
+            case "Bihar": return (R.array.array_bihar_districts);
+            case "Chhattisgarh": return(R.array.array_chhattisgarh_districts);
+            case "Goa": return (R.array.array_goa_districts);
+            case "Gujarat": return (R.array.array_gujarat_districts);
+            case "Haryana": return (R.array.array_haryana_districts);
+            case "Himachal Pradesh": return (R.array.array_himachal_pradesh_districts);
+            case "Jharkhand": return (R.array.array_jharkhand_districts);
+            case "Karnataka": return (R.array.array_karnataka_districts);
+            case "Kerala": return (R.array.array_kerala_districts);
+            case "Madhya Pradesh": return (R.array.array_madhya_pradesh_districts);
+            case "Maharashtra": return (R.array.array_maharashtra_districts);
+            case "Manipur": return (R.array.array_manipur_districts);
+            case "Meghalaya": return (R.array.array_meghalaya_districts);
+            case "Mizoram": return (R.array.array_mizoram_districts);
+            case "Nagaland": return (R.array.array_nagaland_districts);
+            case "Odisha": return (R.array.array_odisha_districts);
+            case "Punjab": return(R.array.array_punjab_districts);
+            case "Rajasthan": return(R.array.array_rajasthan_districts);
+            case "Sikkim": return(R.array.array_sikkim_districts);
+            case "Tamil Nadu": return (R.array.array_tamil_nadu_districts);
+            case "Telangana": return(R.array.array_telangana_districts);
+            case "Tripura": return(R.array.array_tripura_districts);
+            case "Uttar Pradesh": return(R.array.array_uttar_pradesh_districts);
+            case "Uttarakhand": return(R.array.array_uttarakhand_districts);
+            case "West Bengal": return(R.array.array_west_bengal_districts);
+            case "Andaman and Nicobar Islands": return(R.array.array_andaman_nicobar_districts);
+            case "Chandigarh": return(R.array.array_chandigarh_districts);
+            case "Dadra and Nagar Haveli": return(R.array.array_dadra_nagar_haveli_districts);
+            case "Daman and Diu": return(R.array.array_daman_diu_districts);
+            case "Delhi": return(R.array.array_delhi_districts);
+            case "Jammu and Kashmir": return(R.array.array_jammu_kashmir_districts);
+            case "Lakshadweep": return(R.array.array_lakshadweep_districts);
+            case "Ladakh": return(R.array.array_ladakh_districts);
+            case "Puducherry": return(R.array.array_puducherry_districts);
+
+            default:  break;
+        }
+
+        return 0;
+    }
+
     public void clear(EditText et){
         et.setText("");
     }
 
-    public boolean validateData(String name, String Address, String phoneNoMain, String p2, String p3, String p4,
+    public boolean validateData(String name, String address, String state, String city, String phoneNoMain, String p2, String p3, String p4,
                                 String emailMain, String emailAlternate, String pin){
 
-        if(name.length()==0 || !name.matches("/D*.$")){
-            Toast.makeText(this, "Name should contain only alphabets and should not be empty", Toast.LENGTH_SHORT).show();
+        if(name.length()==0 || !name.matches("^[a-zA-Z\\.][a-zA-Z\\s\\.]{0,20}[a-zA-Z\\.]$")){
+            if(name.length()==0) Toast.makeText(this, "Name is empty", Toast.LENGTH_SHORT).show();
+            else Toast.makeText(this, "Name should contain only alphabets", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if(Address.length()<10){
+        if(address.length()<10){
             Toast.makeText(this, "Address should not be empty", Toast.LENGTH_SHORT).show();
             return false;
             }
+        if(state==null || state.isEmpty()){
+            Toast.makeText(this, "Please select State", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(city==null || city.isEmpty()){
+            Toast.makeText(this, "Please select City", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if(pin.isEmpty() || !pin.matches("^[0-9]{6}$")){
+            Toast.makeText(this, "Please enter valid pin", Toast.LENGTH_SHORT).show();
+            return false;
+        }
 
         String[] phoneNos = new String[4];
         phoneNos[0] = phoneNoMain;
@@ -267,7 +392,7 @@ public class AddNewPandit extends AppCompatActivity {
         }else{
             if(!phoneNoMain.matches("^[6789]\\d{9}$")){
                 Toast.makeText(this, "Please enter valid phone no", Toast.LENGTH_SHORT).show();
-                clear();
+                clear(panditPhoneMain);
             }
             for(int i=1; i<phoneNos.length; i++){
                 if(!phoneNos[i].isEmpty() && !phoneNos[i].matches("^[6789]\\d{9}$")){
@@ -277,7 +402,7 @@ public class AddNewPandit extends AppCompatActivity {
             }
         }
 
-        if(!emailMain.matches("^(.+)@(\\S+)$")){
+        if(!emailMain.matches("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$")){
             Toast.makeText(this, "Please enter valid email", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -286,11 +411,6 @@ public class AddNewPandit extends AppCompatActivity {
             Toast.makeText(this, "Please enter valid email", Toast.LENGTH_SHORT).show();
             return false;
 
-        }
-
-        if(pin.isEmpty() || !pin.matches("/d{6}")){
-            Toast.makeText(this, "Please enter valid pin", Toast.LENGTH_SHORT).show();
-            return false;
         }
 
         return true;

@@ -18,7 +18,10 @@
         android:theme="@style/Theme.SindhiSangat">
 
 
-        <activity android:name="com.SindhiManu.Tipno.DisplayAarti" android:screenOrientation="portrait">
+        <activity android:name="com.SindhiManu.Tipno.DisplayAarti"
+
+            android:theme="@style/Theme.SindhiSangat.NoActionBar"
+            >
 
         </activity>
         <activity android:exported="true"
@@ -33,15 +36,8 @@
             >
         </activity>
 
-        <activity android:name="com.SindhiManu.Tipno.AddNewPandit"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.SindhiSangat.NoActionBar"
-            >
-        </activity>
 
-
-        <activity android:name="com.SindhiManu.Tipno.Events"
+        <activity android:name="com.SindhiManu.Tipno.DisplayAartiMenu"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.SindhiSangat.NoActionBar"

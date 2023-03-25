@@ -9,6 +9,9 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class HomePage extends AppCompatActivity {
 
     @Override // Hardcoding the view so that phone's display settings do not interfere with UI
@@ -28,6 +31,9 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_display_home_page);
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);
 
+        AdView mAdView = findViewById(R.id.adView_home);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         ImageButton tipnoButton = findViewById(R.id.tipno);
 
@@ -47,14 +53,14 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-        ImageButton BMM_Pandits = findViewById(R.id.contacts);
-
-        BMM_Pandits.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fetchPanditsAndDisplay();
-            }
-        });
+//        ImageButton BMM_Pandits = findViewById(R.id.contacts);
+//
+//        BMM_Pandits.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                fetchPanditsAndDisplay();
+//            }
+//        });
 
         ImageButton aarti = findViewById(R.id.aartis);
         aarti.setOnClickListener(new View.OnClickListener() {
@@ -78,13 +84,13 @@ public class HomePage extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void fetchPanditsAndDisplay(){
-        Intent intent = new Intent(this, DisplayPandits.class);
-        startActivity(intent);
-    }
+//    public void fetchPanditsAndDisplay(){
+//        Intent intent = new Intent(this, DisplayPandits.class);
+//        startActivity(intent);
+//    }
 
     public void displayAartis(){
-        Intent intent = new Intent(this, DisplayAarti.class);
+        Intent intent = new Intent(this, DisplayAartiMenu.class);
         startActivity(intent);
     }
 }

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:paddingHorizontal="30dp">
+
+    <soup.neumorphism.NeumorphTextView
+        android:id="@+id/header_app_title"
+        style="@style/Widget.Neumorph.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        android:text="Aarti"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_below="@+id/header_app_title"
+        android:layout_above="@+id/adView_aarti_menu"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <soup.neumorphism.NeumorphButton
+                android:id="@+id/jhulelal_aarti_button"
+                style="@style/Widget.Neumorph.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Shri Jhulelal Aarti
+                              (Jai Jhulan Deva)"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:padding="30dp"
+                app:neumorph_shapeType="basin" />
+
+            <soup.neumorphism.NeumorphButton
+                android:id="@+id/ganesh_aarti1_button"
+                style="@style/Widget.Neumorph.Button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="Shri Ganesh Ji Ki Aarti
+                            (Ganapati Ki Seva)"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:padding="30dp"
+                app:neumorph_shapeType="basin" />
+
+            <soup.neumorphism.NeumorphButton
+                android:id="@+id/ganesh_aarti2_button"
+                style="@style/Widget.Neumorph.Button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="Shri Ganesh Ji Ki Aarti
+                            (Jai Ganesh)"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:padding="30dp"
+                app:neumorph_shapeType="basin" />
+
+            <soup.neumorphism.NeumorphButton
+                android:id="@+id/ganesh_aarti3_button"
+                style="@style/Widget.Neumorph.Button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:textColor="@color/black"
+                android:text="Shri Ganesh Ji Ki Aarti
+                            (Sukh Karta)"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:padding="30dp"
+                app:neumorph_shapeType="basin" />
+
+            <soup.neumorphism.NeumorphButton
+                android:id="@+id/shiva_aarti_button"
+                style="@style/Widget.Neumorph.Button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="Aarti Shri Shiv Ji Maharaj Ki
+                            (Om Jai Shiv Omkara)"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                app:neumorph_shapeType="basin"
+                android:padding="30dp"/>
+
+
+            <soup.neumorphism.NeumorphButton
+                android:id="@+id/ambeji_aarti_button"
+                style="@style/Widget.Neumorph.Button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="Aarti Shri Ambe Ji Ki
+                            (Om Jai Ambe Gauri)"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:padding="30dp"
+                app:neumorph_shapeType="basin" />
+
+            <soup.neumorphism.NeumorphButton
+                android:id="@+id/jagdishji_aarti_button"
+                style="@style/Widget.Neumorph.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aarti Bhagwan Jagdish Ji ki
+                            (Om Jai Jagadish Hare)"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:padding="30dp"
+                app:neumorph_shapeType="basin" />
+
+            <soup.neumorphism.NeumorphButton
+                android:id="@+id/satyanarayanji_aarti_button"
+                style="@style/Widget.Neumorph.Button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="Aarti Satyanarayan ki
+                            (Jai Lakshmi Ramna)"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:padding="30dp"
+                app:neumorph_shapeType="basin" />
+
+            <soup.neumorphism.NeumorphButton
+                android:id="@+id/lakshmiji_aarti_button"
+                style="@style/Widget.Neumorph.Button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="ShriLakshmi Ji Ki Aarti
+                            (Om Jai Lakshmi Mata)"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:padding="30dp"
+                app:neumorph_shapeType="basin" />
+
+            <soup.neumorphism.NeumorphButton
+                android:id="@+id/kalimata_aarti_button"
+                style="@style/Widget.Neumorph.Button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="Kaali Mata Ki Aarti
+                       (Mangal Ki Seva Sun Meri Deva)"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:padding="30dp"
+                app:neumorph_shapeType="basin" />
+
+            <soup.neumorphism.NeumorphButton
+                android:id="@+id/hanumanji_aarti_button"
+                style="@style/Widget.Neumorph.Button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="Shri Hanuman Ji Ki Aarti
+                       (Aarti Keejei Hanuman Lala Ki)"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:padding="30dp"
+                app:neumorph_shapeType="basin" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView_aarti_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+    </com.google.android.gms.ads.AdView>
+</RelativeLayout>

@@ -53,6 +53,7 @@
                 android:padding="25dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:visibility="gone"
                 android:src="@drawable/event_colored"
                 app:neumorph_shapeType="basin" />
 
@@ -81,6 +82,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Events"
+                    android:visibility="gone"
                     android:textColor="@color/black"
                     android:textSize="30sp" />
 
@@ -108,6 +110,7 @@
                 android:layout_height="160dp"
                 android:padding="20dp"
                 android:layout_weight="1"
+                android:visibility="gone"
                 android:src="@drawable/pandit_monk"
                 app:neumorph_shapeType="basin" />
 
@@ -120,14 +123,14 @@
                 android:padding="20dp"
                 android:layout_weight="1"
                 android:src="@drawable/diya_aarti"
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 app:neumorph_shapeType="basin" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:orientation="horizontal"
             android:layout_weight="2">
 
@@ -138,6 +141,7 @@
                 android:text="Brahmin Mitra Mandal"
                 android:layout_gravity="center_vertical"
                 android:gravity="center"
+                android:visibility="gone"
                 android:textColor="@color/black"
                 android:layout_weight="1"
                 android:textSize="25sp"
@@ -158,5 +162,14 @@
     </LinearLayout>
 
 
-
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+    </com.google.android.gms.ads.AdView>
 </RelativeLayout>

@@ -4,15 +4,22 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.jsibbold.zoomage.ZoomageView;
 
 public class DisplayMonth extends AppCompatActivity {
@@ -38,23 +45,28 @@ public class DisplayMonth extends AppCompatActivity {
 
     static int[] listCalEng_2023 = {
             R.drawable.jan_2023_1, R.drawable.jan_2023_2, R.drawable.feb_2023_1, R.drawable.feb_2023_2,
-            R.drawable.mar_2023_1, R.drawable.mar_2023_2, R.drawable.download,R.drawable.download, R.drawable.download,R.drawable.download,
-            R.drawable.download,R.drawable.download,R.drawable.download,R.drawable.download,R.drawable.download,
-            R.drawable.download,R.drawable.download,R.drawable.download,R.drawable.download,R.drawable.download,
-            R.drawable.download,R.drawable.download,R.drawable.download,R.drawable.download};
+            R.drawable.mar_2023_1, R.drawable.mar_2023_2, R.drawable.apr_2023_1,R.drawable.apr_2023_2,
+            R.drawable.may_2023_1,R.drawable.may_2023_2, R.drawable.jun_2023_1,R.drawable.jun_2023_2,
+            R.drawable.jul_2023_1,R.drawable.jul_2023_2,R.drawable.aug_2023_1, R.drawable.aug_2023_2,
+            R.drawable.aug_2023_3,R.drawable.sep_2023_1,R.drawable.sep_2023_2,R.drawable.oct_2023_1,
+            R.drawable.oct_2023_2,R.drawable.nov_2023_1,R.drawable.nov_2023_2,R.drawable.dec_2023_1,
+            R.drawable.dec_2023_2,R.drawable.jan_2024_1};
 
     static int[] listCalHin_2023 = {
             R.drawable.jan_2023_h1, R.drawable.jan_2023_h2,  R.drawable.feb_2023_h1,  R.drawable.feb_2023_h2,
-            R.drawable.mar_2023_h1,  R.drawable.mar_2023_h2, R.drawable.download,R.drawable.download, R.drawable.download,R.drawable.download,
-            R.drawable.download,R.drawable.download,R.drawable.download,R.drawable.download,R.drawable.download,
-            R.drawable.download,R.drawable.download,R.drawable.download,R.drawable.download,R.drawable.download,
-            R.drawable.download,R.drawable.download,R.drawable.download,R.drawable.download};
+            R.drawable.mar_2023_h1,  R.drawable.mar_2023_h2, R.drawable.apr_2023_h1,R.drawable.apr_2023_h2,
+            R.drawable.may_2023_h1, R.drawable.may_2023_h2,R.drawable.jun_2023_h1, R.drawable.jun_2023_h2,
+            R.drawable.jul_2023_h1,R.drawable.jul_2023_h2, R.drawable.aug_2023_h1,R.drawable.aug_2023_h2,
+            R.drawable.aug_2023_h3, R.drawable.sep_2023_h1, R.drawable.sep_2023_h2,R.drawable.oct_2023_h1,
+            R.drawable.oct_2023_h2, R.drawable.nov_2023_h1, R.drawable.nov_2023_h2,R.drawable.dec_2023_h1,
+            R.drawable.dec_2023_h2,R.drawable.jan_2024_h1};
 
     static int[] gridCal_2022 = {R.drawable.jan_cal, R.drawable.feb_cal, R.drawable.mar_cal, R.drawable.apr_cal,
                   R.drawable.may_cal, R.drawable.jun_cal, R.drawable.jul_cal, R.drawable.aug_cal,
                   R.drawable.sep_cal, R.drawable.oct_cal, R.drawable.nov_cal, R.drawable.dec_cal};
 
-    static int[] listCalEng_2022 = {R.drawable.download, R.drawable.download,R.drawable.download,R.drawable.download,
+    static int[] listCalEng_2022 =
+            {R.drawable.download, R.drawable.download,R.drawable.download,R.drawable.download,
             R.drawable.download,R.drawable.download,R.drawable.apr_2022_1, R.drawable.apr_2022_2,
             R.drawable.may_2022_1, R.drawable.may_2022_2, R.drawable.jun_2022_1, R.drawable.jun_2022_2,
             R.drawable.jul_2022_1, R.drawable.jul_2022_2, R.drawable.aug_2022_1, R.drawable.aug_2022_2,
@@ -62,15 +74,11 @@ public class DisplayMonth extends AppCompatActivity {
             R.drawable.nov_2022_1, R.drawable.nov_2022_2, R.drawable.dec_2022_1, R.drawable.dec_2022_2};
 
     static int[] listCalHin_2022 =
-            {R.drawable.download, R.drawable.download,R.drawable.download,R.drawable.download, R.drawable.download,
-                    R.drawable.download, R.drawable.apr_2022_h1, R.drawable.apr_2022_h2,
+            {R.drawable.download, R.drawable.download,R.drawable.download,R.drawable.download, R.drawable.download, R.drawable.download, R.drawable.apr_2022_h1, R.drawable.apr_2022_h2,
             R.drawable.may_2022_h1, R.drawable.may_2022_h2, R.drawable.jun_2022_h1, R.drawable.jun_2022_h2,
             R.drawable.jul_2022_h1, R.drawable.jul_2022_h2, R.drawable.aug_2022_h1, R.drawable.aug_2022_h2,
             R.drawable.sep_2022_h1, R.drawable.sep_2022_h2, R.drawable.oct_2022_h1, R.drawable.oct_2022_h2,
             R.drawable.nov_2022_h1, R.drawable.nov_2022_h2, R.drawable.dec_2022_h1, R.drawable.dec_2022_h2};
-
-
-//    int[] monthIndices = {0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22};
 
     public static void setCurMonth(int month){
         curMonth = month;
@@ -82,8 +90,9 @@ public class DisplayMonth extends AppCompatActivity {
         if(curYear==2022) {
             setCurMonth(1);
             setCurYear(2023);
-        }else {
-            setCurMonth(1);
+        }
+        else {
+            Toast.makeText(this, "That's All!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -92,7 +101,7 @@ public class DisplayMonth extends AppCompatActivity {
             setCurMonth(12);
             setCurYear(2022);
         }else{
-            setCurMonth(12);
+            Toast.makeText(this, "That's All!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -133,13 +142,14 @@ public class DisplayMonth extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-//            @Override
-//            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
-//            }
-//        });
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+            }
+        });
 
-
+        //disabling screen capture
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
 
         setContentView(R.layout.content_display_month);
         ImageButton calOption = findViewById(R.id.calendarOption);
@@ -158,7 +168,13 @@ public class DisplayMonth extends AppCompatActivity {
             if(isGridCal){ //When Activity is called, display corresponding Month in chosen view.
                 Glide.with(DisplayMonth.this).load(gridCal[curMonth-1]).into(month);
             }else  {
-                Glide.with(DisplayMonth.this).load(listCalEng[curIndexOfList=(curMonth-1)*2]).into(list);
+
+                if(curYear==2023 && curMonth>=9){
+                    Glide.with(DisplayMonth.this).load(listCalEng[(curIndexOfList=(curMonth-1)*2)+1]).into(list);
+                }else{
+                    Glide.with(DisplayMonth.this).load(listCalEng[curIndexOfList=(curMonth-1)*2]).into(list);
+                }
+
                 viewFlipper.showNext();
 
                 if(curYear == 2023 && listCalEng[curIndexOfList]== R.drawable.download) {
@@ -170,10 +186,9 @@ public class DisplayMonth extends AppCompatActivity {
             Toast.makeText(this,"Data Retrieve error", Toast.LENGTH_SHORT).show();
         }
 
-//        AdView mAdView1 = findViewById(R.id.adView);
-//        AdRequest adRequest1 = new AdRequest.Builder().build();
-//        AdRequest adRequest2 = new AdRequest.Builder().build();
-//        mAdView1.loadAd(adRequest1);
+        AdView mAdView = findViewById(R.id.adView_month);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         prev.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -44,8 +44,8 @@ public class DisplayPandits extends AppCompatActivity {
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);
         RecyclerView pandit_recyclerView = findViewById(R.id.pandit_recycler_view);
 
-        database = FirebaseDatabase.getInstance("https://sindhi-sangat-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Pandit");
-        NeumorphFloatingActionButton add_pandit = findViewById(R.id.add_new_pandit);
+//        database = FirebaseDatabase.getInstance("https://sindhi-sangat-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Pandit");
+//        NeumorphFloatingActionButton add_pandit = findViewById(R.id.add_new_pandit);
 
         pandit_recyclerView.setHasFixedSize(true);
         pandit_recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -64,7 +64,7 @@ public class DisplayPandits extends AppCompatActivity {
                     pandit_list.add(pandit);
                 }
 
-                myAdapter.notifyDataSetChanged();
+                myAdapter.notifyItemInserted(pandit_list.size()-1);
             }
 
             @Override
@@ -73,17 +73,5 @@ public class DisplayPandits extends AppCompatActivity {
             }
         });
 
-        add_pandit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openAddNewPandit();
-            }
-        });
-    }
-
-
-    public void openAddNewPandit(){
-        Intent intent = new Intent(this, AddNewPandit.class);
-        startActivity(intent);
     }
 }

@@ -44,14 +44,30 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-        ImageButton eventsButton = findViewById(R.id.events);
-
-        eventsButton.setOnClickListener(new View.OnClickListener() {
+        ImageButton aarti = findViewById(R.id.aartis);
+        aarti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openEvents();
+                displayAartis();
             }
         });
+
+        ImageButton festivals = findViewById(R.id.festivals);
+        festivals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                displayFestivals();
+            }
+        });
+
+//        ImageButton eventsButton = findViewById(R.id.events);
+//
+//        eventsButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                openEvents();
+//            }
+//        });
 
 //        ImageButton BMM_Pandits = findViewById(R.id.contacts);
 //
@@ -62,13 +78,6 @@ public class HomePage extends AppCompatActivity {
 //            }
 //        });
 
-        ImageButton aarti = findViewById(R.id.aartis);
-        aarti.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                displayAartis();
-            }
-        });
     }
 
     public void openTipno(){
@@ -78,11 +87,16 @@ public class HomePage extends AppCompatActivity {
 
     }
 
-    public void openEvents(){
-
-        Intent intent = new Intent(this,Events.class);
+    public void displayFestivals(){
+        Intent intent = new Intent(this, DisplayFestivals.class);
         startActivity(intent);
     }
+
+//    public void openEvents(){
+//
+//        Intent intent = new Intent(this,Events.class);
+//        startActivity(intent);
+//    }
 
 //    public void fetchPanditsAndDisplay(){
 //        Intent intent = new Intent(this, DisplayPandits.class);

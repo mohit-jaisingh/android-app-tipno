@@ -177,8 +177,8 @@ public class DisplayMonth extends AppCompatActivity {
 
                 viewFlipper.showNext();
 
-                if(curYear == 2023 && listCalEng[curIndexOfList]== R.drawable.download) {
-                    Toast.makeText(DisplayMonth.this, "Data for month " +curMonth +" will be available from end of March 2023",
+                if(curYear == 2022 && listCalEng[curIndexOfList]== R.drawable.download) {
+                    Toast.makeText(DisplayMonth.this, "Sorry, data for month " +curMonth + ", "+ curYear +" not available.",
                             Toast.LENGTH_SHORT).show();
                 }
             }
@@ -205,8 +205,8 @@ public class DisplayMonth extends AppCompatActivity {
                         moveToPrevYear();
                         Glide.with(DisplayMonth.this).load(listCalEng[curIndexOfList]).into(list);
                     }
-                    if(curYear == 2023 && listCalEng[curIndexOfList+1]== R.drawable.download) {
-                        Toast.makeText(DisplayMonth.this, "Data for month " +curMonth +" will be available from end of March 2023",
+                    if(curYear == 2022 && listCalEng[curIndexOfList+1]== R.drawable.jhulelal_murti) {
+                        Toast.makeText(DisplayMonth.this, "Sorry, data for month " +curMonth +" not available.",
                                 Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -227,8 +227,8 @@ public class DisplayMonth extends AppCompatActivity {
                         }else{
                             Glide.with(DisplayMonth.this).load(listCalEng[++curIndexOfList]).into(list);
                         }
-                        if(curYear == 2023 && listCalEng[curIndexOfList]== R.drawable.download) {
-                            Toast.makeText(DisplayMonth.this, " Requested Data for month " +curMonth +" will be available from end of March 2023",
+                        if(curYear == 2022 && listCalEng[curIndexOfList]== R.drawable.jhulelal_murti) {
+                            Toast.makeText(DisplayMonth.this, " Sorry, data for month  " +curMonth +" not available.",
                                     Toast.LENGTH_LONG).show();
                         }
                         curMonth = (curIndexOfList+1) / 2;

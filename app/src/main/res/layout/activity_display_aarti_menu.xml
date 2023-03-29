@@ -43,6 +43,7 @@
                 android:text="Shri Jhulelal Aarti
                               (Jai Jhulan Deva)"
                 android:textColor="@color/black"
+                android:background="@null"
                 android:textStyle="bold"
                 android:textSize="16sp"
                 android:padding="30dp"
@@ -55,6 +56,7 @@
                 android:layout_height="0dp"
                 android:text="Shri Ganesh Ji Ki Aarti
                             (Ganapati Ki Seva)"
+                android:background="@null"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="16sp"
@@ -69,6 +71,7 @@
                 android:layout_height="0dp"
                 android:text="Shri Ganesh Ji Ki Aarti
                             (Jai Ganesh)"
+                android:background="@null"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="16sp"
@@ -84,6 +87,7 @@
                 android:textColor="@color/black"
                 android:text="Shri Ganesh Ji Ki Aarti
                             (Sukh Karta)"
+                android:background="@null"
                 android:textStyle="bold"
                 android:textSize="16sp"
                 android:layout_weight="1"
@@ -97,6 +101,7 @@
                 android:layout_height="0dp"
                 android:text="Aarti Shri Shiv Ji Maharaj Ki
                             (Om Jai Shiv Omkara)"
+                android:background="@null"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="16sp"
@@ -112,6 +117,7 @@
                 android:layout_height="0dp"
                 android:text="Aarti Shri Ambe Ji Ki
                             (Om Jai Ambe Gauri)"
+                android:background="@null"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="16sp"
@@ -126,6 +132,7 @@
                 android:layout_height="wrap_content"
                 android:text="Aarti Bhagwan Jagdish Ji ki
                             (Om Jai Jagadish Hare)"
+                android:background="@null"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="16sp"
@@ -139,6 +146,7 @@
                 android:layout_height="0dp"
                 android:text="Aarti Satyanarayan ki
                             (Jai Lakshmi Ramna)"
+                android:background="@null"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="16sp"
@@ -153,6 +161,7 @@
                 android:layout_height="0dp"
                 android:text="ShriLakshmi Ji Ki Aarti
                             (Om Jai Lakshmi Mata)"
+                android:background="@null"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="16sp"
@@ -167,6 +176,7 @@
                 android:layout_height="0dp"
                 android:text="Kaali Mata Ki Aarti
                        (Mangal Ki Seva Sun Meri Deva)"
+                android:background="@null"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="16sp"
@@ -181,6 +191,7 @@
                 android:layout_height="0dp"
                 android:text="Shri Hanuman Ji Ki Aarti
                        (Aarti Keejei Hanuman Lala Ki)"
+                android:background="@null"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="16sp"

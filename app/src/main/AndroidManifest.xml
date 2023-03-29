@@ -19,10 +19,11 @@
 
 
         <activity android:name="com.SindhiManu.Tipno.DisplayAarti"
+            android:theme="@style/Theme.SindhiSangat.NoActionBar">
+        </activity>
 
-            android:theme="@style/Theme.SindhiSangat.NoActionBar"
-            >
-
+        <activity android:name="com.SindhiManu.Tipno.DisplayFestivals"
+            android:theme="@style/Theme.SindhiSangat.NoActionBar">
         </activity>
         <activity android:exported="true"
             android:name="com.SindhiManu.Tipno.DisplayMonth"

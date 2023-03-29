@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp"
-        android:text="Aarti"
+        android:text="@string/aarti"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -214,6 +214,6 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+        ads:adUnitId="ca-app-pub-5119696537177747/4675330349">
     </com.google.android.gms.ads.AdView>
 </RelativeLayout>

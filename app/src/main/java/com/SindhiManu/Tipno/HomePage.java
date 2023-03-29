@@ -7,10 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.RequestConfiguration;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class HomePage extends AppCompatActivity {
 
@@ -30,6 +39,19 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_home_page);
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+//        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+//            @Override
+//            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+//            }
+//        });
+
+        List<String> testDeviceIds = Collections.singletonList("DCAB86D21663C265D075B98F6C73A67C");
+        RequestConfiguration configuration = new RequestConfiguration.Builder()
+                .setTestDeviceIds(testDeviceIds)
+                .build();
+
+        MobileAds.setRequestConfiguration(configuration);
 
         AdView mAdView = findViewById(R.id.adView_home);
         AdRequest adRequest = new AdRequest.Builder().build();

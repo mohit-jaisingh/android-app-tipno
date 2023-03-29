@@ -9,6 +9,30 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="calendar_photo">Calendar Photo</string>
+    <string name="tipno">Tipno</string>
+    <string name="aarti_lamp_photo">Aarti Lamp Photo</string>
+    <string name="aarti">Aarti</string>
+    <string name="photo_of_festivals">Photo of Festivals</string>
+    <string name="important_festivals">Important Festivals</string>
+    <string name="sindhi_sangat">Sindhi Sangat</string>
+    <string name="events">Events</string>
+    <string name="change_language">change language</string>
+    <string name="year_selection_dropdown">Year selection Dropdown</string>
+    <string name="jhulelal_photo">jhulelal photo</string>
+    <string name="sindhi_tipno">Sindhi Tipno</string>
+    <string name="january">January</string>
+    <string name="february">February</string>
+    <string name="march">March</string>
+    <string name="april">April</string>
+    <string name="may">May</string>
+    <string name="june">June</string>
+    <string name="july">July</string>
+    <string name="august">August</string>
+    <string name="september">September</string>
+    <string name="october">October</string>
+    <string name="november">November</string>
+    <string name="december">December</string>
 
     <string-array name="array_indian_states">
         <item>Andaman and Nicobar Islands</item>

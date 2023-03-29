@@ -15,13 +15,14 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp"
-        android:text="Important Festivals"
+        android:text="@string/important_festivals"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <ScrollView
         android:id="@id/scroll_view"
+        android:contentDescription="@string/important_festivals"
         android:layout_below="@+id/header_festivals_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -91,7 +92,7 @@
             android:textStyle="bold"
             android:textColor="@color/black"
             android:background="@null"
-            android:text="Previous"
+            android:text="@string/previous"
 
             />
 
@@ -106,7 +107,7 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             android:background="@null"
-            android:text="Next"
+            android:text="@string/next"
             />
     </LinearLayout>
 
@@ -121,7 +122,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+        ads:adUnitId="ca-app-pub-5119696537177747/3174342499">
     </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
@@ -40,18 +41,18 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_display_home_page);
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-//        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-//            @Override
-//            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
-//            }
-//        });
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+            }
+        });
 
-        List<String> testDeviceIds = Collections.singletonList("DCAB86D21663C265D075B98F6C73A67C");
-        RequestConfiguration configuration = new RequestConfiguration.Builder()
-                .setTestDeviceIds(testDeviceIds)
-                .build();
-
-        MobileAds.setRequestConfiguration(configuration);
+//        List<String> testDeviceIds = Collections.singletonList("DCAB86D21663C265D075B98F6C73A67C");
+//        RequestConfiguration configuration = new RequestConfiguration.Builder()
+//                .setTestDeviceIds(testDeviceIds)
+//                .build();
+//
+//        MobileAds.setRequestConfiguration(configuration);
 
         AdView mAdView = findViewById(R.id.adView_home);
         AdRequest adRequest = new AdRequest.Builder().build();

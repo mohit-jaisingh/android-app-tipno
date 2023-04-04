@@ -53,9 +53,6 @@ public class DisplayFestivals extends AppCompatActivity {
             Toast.makeText(this,"Data Retrieve error", Toast.LENGTH_SHORT).show();
         }
 
-//        AdView mAdView = findViewById(R.id.adView_aartis);
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        mAdView.loadAd(adRequest);
 
         prev.setOnClickListener(new View.OnClickListener() {
             @Override

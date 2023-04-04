@@ -122,6 +122,8 @@
             android:textStyle="bold"
             android:textColor="@color/black"
             android:background="@null"
+            app:neumorph_backgroundColor="@color/orange"
+            app:neumorph_shadowColorDark="@color/orange_dark"
             android:text="@string/previous"
 
             />
@@ -137,6 +139,8 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             android:background="@null"
+            app:neumorph_backgroundColor="@color/orange"
+            app:neumorph_shadowColorDark="@color/orange_dark"
             android:text="@string/next"
             />
     </LinearLayout>
@@ -152,7 +156,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-5119696537177747/3509669825">
+        ads:adUnitId="@string/test_ad_unit_ID">
     </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

@@ -10,8 +10,11 @@
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:fontFamily">serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15sp</item>
     </style>
 
     <style name="Theme.SindhiSangat.NoActionBar">
@@ -19,6 +22,7 @@
         <item name="windowNoTitle">true</item>
 
     </style>
+
 
     <style name="Theme.SindhiSangat.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 

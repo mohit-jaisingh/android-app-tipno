@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,10 +18,17 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.play.core.review.ReviewInfo;
+import com.google.android.play.core.review.ReviewManager;
+import com.google.android.play.core.review.ReviewManagerFactory;
+import com.google.android.play.core.review.model.ReviewErrorCode;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import soup.neumorphism.NeumorphButton;
 
 public class HomePage extends AppCompatActivity {
 
@@ -83,6 +91,14 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
+        NeumorphButton share_button = findViewById(R.id.share_app_btn);
+        share_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                shareApp(HomePage.this);
+            }
+        });
+
 //        ImageButton eventsButton = findViewById(R.id.events);
 //
 //        eventsButton.setOnClickListener(new View.OnClickListener() {
@@ -103,14 +119,38 @@ public class HomePage extends AppCompatActivity {
 
     }
 
-    public void openTipno(){
+    @Override
+    protected void onRestart() {
+        activateFeedbackDialog();
+        super.onRestart();
+    }
+
+    ReviewInfo reviewInfo;
+    ReviewManager manager;
+
+    private void activateFeedbackDialog() {
+        manager = ReviewManagerFactory.create(this);
+        Task<ReviewInfo> request = manager.requestReviewFlow();
+        request.addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                // We can get the ReviewInfo object
+                reviewInfo = task.getResult();
+            } else {
+                // There was some problem, log or handle the error code.
+                Toast.makeText(this, "Review failed to start", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
+    public void openTipno() {
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
 
     }
 
-    public void displayFestivals(){
+    public void displayFestivals() {
         Intent intent = new Intent(this, DisplayFestivals.class);
         startActivity(intent);
     }
@@ -126,8 +166,20 @@ public class HomePage extends AppCompatActivity {
 //        startActivity(intent);
 //    }
 
-    public void displayAartis(){
+    public void displayAartis() {
         Intent intent = new Intent(this, DisplayAartiMenu.class);
         startActivity(intent);
     }
+
+    public void shareApp(Context context) {
+        final String appPackageName = context.getPackageName();
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "Check out the Sindhi Sangat App: Sindhi Tipno and Aarti app \n" +
+                "Download Now: https://play.google.com/store/apps/details?id=" + appPackageName);
+        sendIntent.setType("text/plain");
+        startActivity(Intent.createChooser(sendIntent, "Share With"));
+    }
+
+
 }

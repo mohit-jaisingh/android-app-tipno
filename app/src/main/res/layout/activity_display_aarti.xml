@@ -1,48 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/design_dark_default_color_shadow_dark"
-    tools:context=".DisplayMonth">
-
-
-    <ViewFlipper
-        android:id="@+id/viewFlipper"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:autoStart="false">
-
-    </ViewFlipper>
+    tools:context="com.SindhiManu.Tipno.DisplayMonth"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentEnd="true"
+    android:layout_centerVertical="true"
+    android:autoStart="false">
 
     <com.jsibbold.zoomage.ZoomageView
-        android:id="@+id/viewMonth"
+        android:id="@+id/viewAarti"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/shree_jhulelal_ji_ki_aarti"
         app:zoomage_animateOnReset="true"
         app:zoomage_autoResetMode="UNDER"
         app:zoomage_maxScale="8"
-
         app:zoomage_minScale="1"
         app:zoomage_restrictBounds="true"
         app:zoomage_translatable="true"
-        app:zoomage_zoomable="true" />
+        app:zoomage_zoomable="true"
 
-<!--    <com.google.android.gms.ads.AdView-->
-<!--        xmlns:ads="http://schemas.android.com/apk/res-auto"-->
-<!--        android:id="@+id/adView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        ads:adSize="BANNER"-->
-<!--        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">-->
-<!--    </com.google.android.gms.ads.AdView>-->
+        />
 
-</RelativeLayout>
+    <com.jsibbold.zoomage.ZoomageView
+        android:id="@+id/viewListAarti"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:zoomage_animateOnReset="true"
+        app:zoomage_autoResetMode="UNDER"
+        app:zoomage_maxScale="8"
+        app:zoomage_minScale="1"
+        app:zoomage_restrictBounds="true"
+        app:zoomage_translatable="true"
+        app:zoomage_zoomable="true"
+
+        />
+
+
+    <!--    <com.jsibbold.zoomage.ZoomageView-->
+    <!--        android:id="@+id/viewMonth"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:src="@drawable/shree_jhulelal_ji_ki_aarti"-->
+    <!--        app:zoomage_animateOnReset="true"-->
+    <!--        app:zoomage_autoResetMode="UNDER"-->
+    <!--        app:zoomage_maxScale="8"-->
+
+    <!--        app:zoomage_minScale="1"-->
+    <!--        app:zoomage_restrictBounds="true"-->
+    <!--        app:zoomage_translatable="true"-->
+    <!--        app:zoomage_zoomable="true" />-->
+
+    <!--    <com.google.android.gms.ads.AdView-->
+    <!--        xmlns:ads="http://schemas.android.com/apk/res-auto"-->
+    <!--        android:id="@+id/adView_aartis"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        ads:adSize="BANNER"-->
+    <!--        ads:adUnitId="ca-app-pub-5119696537177747~8816921189">-->
+    <!--    </com.google.android.gms.ads.AdView>-->
+</ViewFlipper>
+
 

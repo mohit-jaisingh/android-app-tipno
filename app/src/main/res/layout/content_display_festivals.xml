@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.SindhiManu.Tipno.DisplayFestivals"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <soup.neumorphism.NeumorphTextView
+        android:id="@+id/header_festivals_title"
+        style="@style/Widget.Neumorph.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        android:text="@string/important_festivals"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:id="@id/scroll_view"
+        android:contentDescription="@string/important_festivals"
+        android:layout_below="@+id/header_festivals_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <ViewFlipper
+                android:id="@+id/viewFlipper_fest"
+                android:layout_width="match_parent"
+                android:layout_height="620dp"
+                android:autoStart="false">
+
+                <com.jsibbold.zoomage.ZoomageView
+                    android:id="@+id/viewFestivals"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:zoomage_zoomable="true"
+                    app:zoomage_minScale="1"
+                    app:zoomage_maxScale="8"
+                    app:zoomage_translatable="true"
+                    app:zoomage_animateOnReset="true"
+                    app:zoomage_autoResetMode="UNDER"
+                    app:zoomage_restrictBounds="true"
+
+                    />
+
+                <com.jsibbold.zoomage.ZoomageView
+                    android:id="@+id/viewList_fest"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:zoomage_zoomable="true"
+                    app:zoomage_minScale="1"
+                    app:zoomage_maxScale="8"
+                    app:zoomage_translatable="true"
+                    app:zoomage_animateOnReset="true"
+                    app:zoomage_autoResetMode="UNDER"
+                    app:zoomage_restrictBounds="true"
+
+                    />
+            </ViewFlipper>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/buttonPanel_fest"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@id/scroll_view"
+        android:layout_above="@id/adView_fest"
+        android:orientation="horizontal">
+
+
+        <soup.neumorphism.NeumorphButton
+            style="@style/Widget.Neumorph.Button"
+            android:id="@+id/prev_fest"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:background="@null"
+            android:text="@string/previous"
+
+            />
+
+        <soup.neumorphism.NeumorphButton
+            style="@style/Widget.Neumorph.Button"
+            android:id="@+id/next_fest"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:background="@null"
+            android:text="@string/next"
+            />
+    </LinearLayout>
+
+
+
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView_fest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-5119696537177747/3174342499">
+    </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>

@@ -9,18 +9,18 @@
     android:paddingHorizontal="40dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
 
-    tools:context=".MainActivity">
+    tools:context="com.SindhiManu.Tipno.MainActivity">
 
     <soup.neumorphism.NeumorphTextView
         android:id="@+id/header_title"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sindhi Tipno"
+        android:text="@string/sindhi_tipno"
         android:textSize="30sp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:layout_margin="15dp"
+        android:layout_marginTop="15dp"
         />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -36,6 +36,7 @@
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:id="@+id/autoCompleteTextView"
+            android:contentDescription="@string/year_selection_dropdown"
             android:backgroundTint="@android:color/transparent"
             android:layout_width="match_parent"
             android:textStyle="bold"
@@ -44,206 +45,224 @@
             android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:id="@+id/month_buttons"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/year_dropdown"
-        android:paddingTop="15dp"
         >
 
         <LinearLayout
-            android:id="@+id/buttons_jan_feb"
+            android:orientation="vertical"
+            android:id="@+id/month_buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:paddingTop="10dp">
 
-            <soup.neumorphism.NeumorphButton
-                style="@style/Widget.Neumorph.Button"
-                android:id="@+id/Jan"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:id="@+id/buttons_jan_feb"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="January"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:layout_weight="1"/>
+                android:orientation="horizontal"
+                >
 
-            <soup.neumorphism.NeumorphButton
-                style="@style/Widget.Neumorph.Button"
-                android:id="@+id/Feb"
-                android:layout_width="0dp"
+                <soup.neumorphism.NeumorphButton
+                    style="@style/Widget.Neumorph.Button"
+                    android:id="@+id/Jan"
+                    android:background="@null"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/january"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:layout_weight="1"/>
+
+                <soup.neumorphism.NeumorphButton
+                    style="@style/Widget.Neumorph.Button"
+                    android:id="@+id/Feb"
+                    android:background="@null"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="@string/february"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="February"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:layout_weight="1"/>
+                android:orientation="horizontal"
+                >
+                <soup.neumorphism.NeumorphButton
+                    style="@style/Widget.Neumorph.Button"
+                    android:id="@+id/Mar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:text="@string/march"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"/>
+
+                <soup.neumorphism.NeumorphButton
+                    style="@style/Widget.Neumorph.Button"
+                    android:id="@+id/Apr"
+                    android:layout_width="0dp"
+                    android:background="@null"
+                    android:layout_height="wrap_content"
+                    android:text="@string/april"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:layout_weight="1"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <soup.neumorphism.NeumorphButton
+                    style="@style/Widget.Neumorph.Button"
+                    android:id="@+id/May"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:text="@string/may"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"/>
+
+                <soup.neumorphism.NeumorphButton
+                    style="@style/Widget.Neumorph.Button"
+                    android:id="@+id/Jun"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:background="@null"
+                    android:text="@string/june"
+                    android:textSize="15sp"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <soup.neumorphism.NeumorphButton
+                    style="@style/Widget.Neumorph.Button"
+                    android:id="@+id/Jul"
+                    android:layout_width="0dp"
+                    android:background="@null"
+                    android:layout_height="wrap_content"
+                    android:text="@string/july"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"/>
+
+                <soup.neumorphism.NeumorphButton
+                    style="@style/Widget.Neumorph.Button"
+                    android:id="@+id/Aug"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:text="@string/august"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <soup.neumorphism.NeumorphButton
+                    style="@style/Widget.Neumorph.Button"
+                    android:id="@+id/Sep"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:text="@string/september"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"/>
+
+                <soup.neumorphism.NeumorphButton
+                    style="@style/Widget.Neumorph.Button"
+                    android:id="@+id/Oct"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:text="@string/october"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <soup.neumorphism.NeumorphButton
+                    style="@style/Widget.Neumorph.Button"
+                    android:id="@+id/Nov"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:text="@string/november"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"/>
+
+                <soup.neumorphism.NeumorphButton
+                    style="@style/Widget.Neumorph.Button"
+                    android:id="@+id/Dec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:text="@string/december"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_weight="1"/>
+
+
+            </LinearLayout>
+
+            <soup.neumorphism.NeumorphImageButton
+                android:id="@+id/jhulelal"
+                android:contentDescription="@string/jhulelal_photo"
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/jhulelal_murti"
+                app:neumorph_shapeType="basin" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-            <soup.neumorphism.NeumorphButton
-                style="@style/Widget.Neumorph.Button"
-                android:id="@+id/Mar"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="March"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:textColor="@color/black"
-                android:layout_weight="1"/>
-
-            <soup.neumorphism.NeumorphButton
-                style="@style/Widget.Neumorph.Button"
-                android:id="@+id/Apr"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="April"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:layout_weight="1"/>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <soup.neumorphism.NeumorphButton
-                style="@style/Widget.Neumorph.Button"
-                android:id="@+id/May"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="May"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:textColor="@color/black"
-                android:layout_weight="1"/>
-
-            <soup.neumorphism.NeumorphButton
-                style="@style/Widget.Neumorph.Button"
-                android:id="@+id/Jun"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:text="June"
-                android:textSize="15sp"
-                android:layout_weight="1"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <soup.neumorphism.NeumorphButton
-                style="@style/Widget.Neumorph.Button"
-                android:id="@+id/Jul"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="July"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:textColor="@color/black"
-                android:layout_weight="1"/>
-
-            <soup.neumorphism.NeumorphButton
-                style="@style/Widget.Neumorph.Button"
-                android:id="@+id/Aug"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="August"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:layout_weight="1"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <soup.neumorphism.NeumorphButton
-                style="@style/Widget.Neumorph.Button"
-                android:id="@+id/Sep"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="September"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_weight="1"/>
-
-            <soup.neumorphism.NeumorphButton
-                style="@style/Widget.Neumorph.Button"
-                android:id="@+id/Oct"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="October"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:layout_weight="1"/>
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <soup.neumorphism.NeumorphButton
-                style="@style/Widget.Neumorph.Button"
-                android:id="@+id/Nov"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="November"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:textColor="@color/black"
-                android:layout_weight="1"/>
-
-            <soup.neumorphism.NeumorphButton
-                style="@style/Widget.Neumorph.Button"
-                android:id="@+id/Dec"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="December"
-                android:textSize="15sp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:layout_weight="1"/>
-
-
-        </LinearLayout>
+    </ScrollView>
 
 
 
-    </LinearLayout>
-
-
-    <soup.neumorphism.NeumorphImageButton
-        android:id="@+id/jhulelal"
-        style="@style/Widget.Neumorph.CardView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_below="@id/month_buttons"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/jhulelal_murti"
-        app:neumorph_shapeType="basin" />
 
 
 </RelativeLayout>

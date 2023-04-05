@@ -1,9 +1,13 @@
 package com.SindhiManu.Tipno;
 
+import android.app.AlarmManager;
+import android.app.Notification;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -15,17 +19,21 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import com.google.android.material.textfield.MaterialAutoCompleteTextView;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
     AutoCompleteTextView autoCompleteTxt;
     ArrayAdapter<String> adapterItems;
     TextInputLayout textInputLayout;
+
+
 
     @Override // Hardcoding the view so that phone's display settings do not interfere with UI
     protected void attachBaseContext(Context newBase) {
@@ -40,9 +48,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
         ArrayList<String> items = new ArrayList<>();
@@ -200,5 +205,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DisplayAarti.class);
         startActivity(intent);
     }
+
+
 
 }

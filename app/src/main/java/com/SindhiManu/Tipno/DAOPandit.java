@@ -1,12 +1,12 @@
-package com.SindhiManu.Tipno;
+package com.SindhiManu.tipno;
 
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DatabaseReference;
+//import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class DAOPandit {
 
-    private DatabaseReference databaseReference;
+//    private DatabaseReference databaseReference;
 
     public DAOPandit(){
 //        FirebaseDatabase db = FirebaseDatabase.getInstance("https://sindhi-sangat-default-rtdb.asia-southeast1.firebasedatabase.app");

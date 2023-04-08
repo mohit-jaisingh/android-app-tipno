@@ -121,14 +121,14 @@ public class HomePage extends AppCompatActivity {
 //            }
 //        });
 
-//        ImageButton BMM_Pandits = findViewById(R.id.contacts);
-//
-//        BMM_Pandits.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                fetchPanditsAndDisplay();
-//            }
-//        });
+        ImageButton BMM_Pandits = findViewById(R.id.contacts);
+
+        BMM_Pandits.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fetchPanditsAndDisplay();
+            }
+        });
 
     }
 
@@ -174,10 +174,10 @@ public class HomePage extends AppCompatActivity {
 //        startActivity(intent);
 //    }
 
-//    public void fetchPanditsAndDisplay(){
-//        Intent intent = new Intent(this, DisplayPandits.class);
-//        startActivity(intent);
-//    }
+    public void fetchPanditsAndDisplay(){
+        Intent intent = new Intent(this, DisplayPandits.class);
+        startActivity(intent);
+    }
 
     public void displayAartis() {
         Intent intent = new Intent(this, DisplayAartiMenu.class);
@@ -207,10 +207,10 @@ public class HomePage extends AppCompatActivity {
         assert alarmManager != null;
 
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, 8);
+        calendar.set(Calendar.HOUR_OF_DAY, 7);
         calendar.set(Calendar.MINUTE, 30);
 
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_HALF_DAY, pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),AlarmManager.INTERVAL_HALF_DAY, pendingIntent);
 
     }
     private Notification getNotification (String title, String content) {

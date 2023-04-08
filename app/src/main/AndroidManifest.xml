@@ -2,11 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.SindhiManu.Tipno">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <uses-feature android:name="android.hardware.screen.portrait" />
 
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
@@ -15,51 +16,50 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
         android:screenOrientation="portrait"
+        android:supportsRtl="true"
         android:theme="@style/Theme.SindhiSangat">
 
 
-        <activity android:name="com.SindhiManu.Tipno.DisplayAarti"
-            android:theme="@style/Theme.SindhiSangat.NoActionBar">
-        </activity>
+        <activity
+            android:name="com.SindhiManu.Tipno.DisplayAarti"
+            android:theme="@style/Theme.SindhiSangat.NoActionBar" />
 
-        <activity android:name="com.SindhiManu.Tipno.DisplayFestivals"
-            android:theme="@style/Theme.SindhiSangat.NoActionBar">
-        </activity>
-        <activity android:exported="true"
+        <activity
+            android:name="com.SindhiManu.Tipno.DisplayFestivals"
+            android:theme="@style/Theme.SindhiSangat.NoActionBar" />
+        <activity
             android:name="com.SindhiManu.Tipno.DisplayMonth"
+            android:exported="true"
             android:label="@string/title_activity_display_month"
-            android:theme="@style/Theme.SindhiSangat.NoActionBar"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name="com.SindhiManu.Tipno.MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.SindhiSangat.NoActionBar"
             android:screenOrientation="portrait"
-            >
+            android:theme="@style/Theme.SindhiSangat.NoActionBar" />
+
+        <activity
+            android:name="com.SindhiManu.Tipno.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SindhiSangat.NoActionBar" />
+
+
+        <activity
+            android:name="com.SindhiManu.Tipno.DisplayAartiMenu"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SindhiSangat.NoActionBar" />
+
+        <activity
+            android:name="com.SindhiManu.Tipno.DisplayPandits"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SindhiSangat">
+
         </activity>
 
-
-        <activity android:name="com.SindhiManu.Tipno.DisplayAartiMenu"
+        <activity
+            android:name="com.SindhiManu.Tipno.HomePage"
             android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.SindhiSangat.NoActionBar"
-            >
-        </activity>
-
-        <activity android:name="com.SindhiManu.Tipno.DisplayPandits"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.SindhiSangat"
-            >
-
-        </activity>
-
-        <activity android:name="com.SindhiManu.Tipno.HomePage"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -69,9 +69,24 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-5119696537177747~8816921189"/> <!--app id-->
+            android:value="ca-app-pub-5119696537177747~8816921189" /> <!--app id-->
 
-        <receiver android:name = ".MyNotificationPublisher"/>
+        <receiver
+            android:name=".MyNotificationPublisher"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name="AddNewPandit"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SindhiSangat"
+            >
+        </activity>
     </application>
 
 </manifest>

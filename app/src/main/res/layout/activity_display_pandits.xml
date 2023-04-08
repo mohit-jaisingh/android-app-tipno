@@ -10,7 +10,7 @@
         android:id="@+id/header_events_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Brahmin Mitra Mandal"
+        android:text="@string/brahmin_mitra_mandal"
         android:layout_centerHorizontal="true"
         android:textColor="@color/black"
         android:textSize="30sp"
@@ -21,24 +21,34 @@
         android:id="@+id/pandit_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_above="@+id/adView_disp_pandit"
+        android:layout_marginVertical="10dp"
         android:layout_below="@id/header_events_title"
         android:layout_centerHorizontal="true"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginHorizontal="5dp"
         />
 
-    <soup.neumorphism.NeumorphFloatingActionButton
-        android:id="@+id/add_new_pandit"
-        style="@style/ShapeAppearance.Neumorph.FloatingActionButton"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_margin="20dp"
+<!--    <soup.neumorphism.NeumorphFloatingActionButton-->
+<!--        android:id="@+id/add_new_pandit"-->
+<!--        style="@style/ShapeAppearance.Neumorph.FloatingActionButton"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:layout_margin="20dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:padding="25dp"-->
+<!--        app:srcCompat="@drawable/ic_green_add_24">-->
+<!--    </soup.neumorphism.NeumorphFloatingActionButton>-->
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView_disp_pandit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:padding="25dp"
-        app:srcCompat="@drawable/ic_green_add_24">
-
-
-    </soup.neumorphism.NeumorphFloatingActionButton>
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/pandit_ad_unit_ID">
+    </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

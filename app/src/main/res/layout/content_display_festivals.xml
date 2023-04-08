@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_margin="15dp"
+        android:layout_margin="10dp"
         android:text="@string/important_festivals"
         android:textColor="@color/black"
         android:textSize="30sp"
@@ -127,7 +127,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="test_ad_unit_ID">
+        ads:adUnitId="@string/fest_ad_unit_ID">
     </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

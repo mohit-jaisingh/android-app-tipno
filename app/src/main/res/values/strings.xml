@@ -36,11 +36,21 @@
     <string name="share_application">Share Application</string>
 
     <string name="test_ad_unit_ID">ca-app-pub-3940256099942544/6300978111</string>
-
+    <string name="pandit_ad_unit_ID">ca-app-pub-5119696537177747/2244096715</string>
     <string name="fest_ad_unit_ID">ca-app-pub-5119696537177747/3174342499</string>
     <string name="home_ad_unit_ID">ca-app-pub-5119696537177747/5800505830</string>
     <string name="aarti_unit_ID">ca-app-pub-5119696537177747/4675330349</string>
     <string name="month_unit_ID">ca-app-pub-5119696537177747/3509669825</string>
+    <string name="select_state">Select State</string>
+    <string name="brahmin_mitra_mandal">Brahmin Mitra Mandal</string>
+    <string name="pandit">Pandit</string>
+    <string name="nameofpandit">NameOfPandit</string>
+    <string name="address">Address:</string>
+    <string name="city">City,</string>
+    <string name="state">state,</string>
+    <string name="pin_code">999-999</string>
+    <string name="phone_no">Phone No:</string>
+    <string name="email_id_s">Email Id(s):</string>
 
     <string-array name="array_indian_states">
         <item>Andaman and Nicobar Islands</item>

@@ -1,5 +1,7 @@
 package com.SindhiManu.Tipno;
 
+import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -28,7 +30,14 @@ public class DisplayFestivals extends AppCompatActivity {
         curFest = pageNo;
     }
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        final Configuration override = new Configuration(newBase.getResources().getConfiguration());
+        override.fontScale = 1.0f;
+        applyOverrideConfiguration(override);
 
+        super.attachBaseContext(newBase);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -21,7 +21,7 @@
                 android:id="@+id/pandit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pandit"
+                android:text="@string/pandit"
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 android:layout_marginLeft="15dp"
@@ -38,7 +38,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginTop="15dp"
                 android:scrollHorizontally="true"
-                android:text="NameOfPandit"
+                android:text="@string/nameofpandit"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
                 android:textSize="22sp"
@@ -51,7 +51,7 @@
                 android:id="@+id/pandit_address_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Address:"
+                android:text="@string/address"
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 android:layout_marginStart="15dp"
@@ -76,7 +76,7 @@
                 android:id="@+id/pandit_city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="City,"
+                android:text="@string/city"
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 app:layout_constraintStart_toEndOf="@id/pandit_address_text"
@@ -86,7 +86,7 @@
                 android:id="@+id/pandit_state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="state,"
+                android:text="@string/state"
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 android:layout_marginLeft="5dp"
@@ -97,7 +97,7 @@
                 android:id="@+id/pandit_pincode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="999-999"
+                android:text="@string/pin_code"
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 app:layout_constraintStart_toEndOf="@id/pandit_address_text"
@@ -107,7 +107,7 @@
                 android:id="@+id/pandit_phone_nos_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Phone No:"
+                android:text="@string/phone_no"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="22sp"
@@ -129,7 +129,7 @@
                 android:id="@+id/pandit_email_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Email Id(s):"
+                android:text="@string/email_id_s"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="22sp"
@@ -164,8 +164,6 @@
 
 
             </HorizontalScrollView>
-
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

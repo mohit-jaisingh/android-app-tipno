@@ -14,6 +14,7 @@ public class MyNotificationPublisher extends BroadcastReceiver {
     public static String NOTIFICATION_ID = "notification-id" ;
     public static String NOTIFICATION = "notification" ;
     public void onReceive (Context context , Intent intent) {
+
         NotificationManager notificationManager = (NotificationManager)context.getSystemService(Context. NOTIFICATION_SERVICE ) ;
         Notification notification = intent.getParcelableExtra( NOTIFICATION ) ;
         if (android.os.Build.VERSION. SDK_INT >= android.os.Build.VERSION_CODES. O ) {

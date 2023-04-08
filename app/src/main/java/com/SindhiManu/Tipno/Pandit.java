@@ -3,7 +3,8 @@ package com.SindhiManu.Tipno;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Pandit {
+public class
+Pandit {
 
     private String name;
     private String address;

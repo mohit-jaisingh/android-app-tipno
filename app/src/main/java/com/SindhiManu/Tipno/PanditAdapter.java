@@ -24,6 +24,10 @@ public class PanditAdapter extends RecyclerView.Adapter<PanditAdapter.MyViewHold
         this.pandits = pandits;
     }
 
+    public void setItems(ArrayList<Pandit> pandits){
+        this.pandits = pandits;
+    }
+
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
@@ -49,7 +53,6 @@ public class PanditAdapter extends RecyclerView.Adapter<PanditAdapter.MyViewHold
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(context).inflate(R.layout.each_pandit,parent,false);
-
         return new MyViewHolder(v);
     }
 
@@ -69,7 +72,7 @@ public class PanditAdapter extends RecyclerView.Adapter<PanditAdapter.MyViewHold
         ArrayAdapter<String> phoneNoAdapter = new ArrayAdapter<>(context, R.layout.each_phone_no,phoneNos);
         holder.phoneNos.setAdapter(phoneNoAdapter);
 
-        ArrayAdapter<String> emailAdapter = new ArrayAdapter<String>(context, R.layout.each_email,emails);
+        ArrayAdapter<String> emailAdapter = new ArrayAdapter<>(context, R.layout.each_email,emails);
         holder.emails.setAdapter(emailAdapter);
     }
 

@@ -190,6 +190,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, HomePage.class);
+        startActivity(intent);
+        finish();
+    }
+
     public void openDisplayMonth(){
 
         Intent intent = new Intent(this, DisplayMonth.class);

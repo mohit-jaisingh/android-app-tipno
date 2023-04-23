@@ -51,6 +51,8 @@
     <string name="pin_code">999-999</string>
     <string name="phone_no">Phone No:</string>
     <string name="email_id_s">Email Id(s):</string>
+    <string name="error_message">" Internet is not connected or there is some error in loading the data"</string>
+    <string name="state_colon">State :</string>
 
     <string-array name="array_indian_states">
         <item>Andaman and Nicobar Islands</item>

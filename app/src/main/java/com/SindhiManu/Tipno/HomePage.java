@@ -68,13 +68,6 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-//        List<String> testDeviceIds = Collections.singletonList("DCAB86D21663C265D075B98F6C73A67C");
-//        RequestConfiguration configuration = new RequestConfiguration.Builder()
-//                .setTestDeviceIds(testDeviceIds)
-//                .build();
-//
-//        MobileAds.setRequestConfiguration(configuration);
-
         AdView mAdView = findViewById(R.id.adView_home);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
@@ -194,40 +187,44 @@ public class HomePage extends AppCompatActivity {
         startActivity(Intent.createChooser(sendIntent, "Share With"));
     }
 
-    private void scheduleNotification (Notification notification) {
-        Intent notificationIntent = new Intent( this, MyNotificationPublisher. class ) ;
-        notificationIntent.putExtra(MyNotificationPublisher. NOTIFICATION_ID , 1 ) ;
-        notificationIntent.putExtra(MyNotificationPublisher. NOTIFICATION , notification) ;
+    private void scheduleNotification(Notification notification) {
+        Intent notificationIntent = new Intent(this, MyNotificationPublisher.class);
+        notificationIntent.putExtra(MyNotificationPublisher.NOTIFICATION_ID, 1);
+        notificationIntent.putExtra(MyNotificationPublisher.NOTIFICATION, notification);
 
-        PendingIntent pendingIntent = PendingIntent. getBroadcast ( this, 0 , notificationIntent , PendingIntent. FLAG_IMMUTABLE ) ;
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, notificationIntent, PendingIntent.FLAG_IMMUTABLE);
 
-        long futureInMillis = SystemClock. elapsedRealtime () + 5000 ;
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        if (alarmManager != null) {
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(Calendar.HOUR_OF_DAY, 7);
+            calendar.set(Calendar.MINUTE, 30);
 
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context. ALARM_SERVICE ) ;
-        assert alarmManager != null;
+            if (calendar.getTimeInMillis() < System.currentTimeMillis()) {
+                // If the set time has already passed for today, schedule it for tomorrow
+                calendar.add(Calendar.DATE, 1);
+            }
 
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, 7);
-        calendar.set(Calendar.MINUTE, 30);
-
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),AlarmManager.INTERVAL_HALF_DAY, pendingIntent);
-
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_HALF_DAY, pendingIntent);
+        }
     }
-    private Notification getNotification (String title, String content) {
 
+    private Notification getNotification(String title, String content) {
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder( this, default_notification_channel_id ) ;
-        builder.setContentTitle(title) ;
-        builder.setContentText(content) ;
-        builder.setSmallIcon(R.drawable.calendar_icon ) ;
-        builder.setAutoCancel( true ) ;
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID);
+        builder.setContentTitle(title);
+        builder.setContentText(content);
+        builder.setSmallIcon(R.drawable.calendar_icon);
+        builder.setAutoCancel(true);
         builder.setContentIntent(pendingIntent);
-        builder.setChannelId( NOTIFICATION_CHANNEL_ID ) ;
-        return builder.build() ;
+
+        return builder.build();
     }
+
 
 
 }

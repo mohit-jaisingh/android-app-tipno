@@ -1,6 +1,7 @@
 package com.SindhiManu.Tipno;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,14 +18,14 @@ import java.util.List;
 public class PanditAdapter extends RecyclerView.Adapter<PanditAdapter.MyViewHolder> {
 
     Context context;
-    ArrayList<Pandit> pandits;
+    List<Pandit> pandits;
 
     public PanditAdapter(Context context, ArrayList<Pandit> pandits) {
         this.context = context;
         this.pandits = pandits;
     }
 
-    public void setItems(ArrayList<Pandit> pandits){
+    public void setItems(List<Pandit> pandits){
         this.pandits = pandits;
     }
 
@@ -69,10 +70,15 @@ public class PanditAdapter extends RecyclerView.Adapter<PanditAdapter.MyViewHold
         List<String> phoneNos = pandit.getPhone_nos();
         List<String> emails = pandit.getEmail_ids();
 
-        ArrayAdapter<String> phoneNoAdapter = new ArrayAdapter<>(context, R.layout.each_phone_no,phoneNos);
+        Log.d("PanditAdapter", "phoneNos: " + phoneNos.toString());
+        Log.d("PanditAdapter", "emails: " + emails.toString());
+        Log.d("PanditAdapter", "onBindViewHolder called for position: " + position);
+
+        PhoneNoAdapter phoneNoAdapter = new PhoneNoAdapter(context,phoneNos);
         holder.phoneNos.setAdapter(phoneNoAdapter);
 
-        ArrayAdapter<String> emailAdapter = new ArrayAdapter<>(context, R.layout.each_email,emails);
+
+        EmailAdapter emailAdapter = new EmailAdapter(context,emails);
         holder.emails.setAdapter(emailAdapter);
     }
 

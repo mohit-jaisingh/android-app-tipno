@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:theme="@style/Theme.SindhiSangat.NoActionBar"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:orientation="vertical"
-    android:paddingHorizontal="40dp">
+    android:paddingHorizontal="40dp"
+    android:theme="@style/Theme.SindhiSangat.NoActionBar">
 
     <soup.neumorphism.NeumorphTextView
         android:id="@+id/header_app_title"
@@ -25,10 +25,11 @@
         android:id="@+id/options"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/header_app_title"
         android:layout_above="@id/adView_home"
+        android:layout_below="@id/header_app_title"
         android:orientation="vertical"
         android:paddingVertical="10dp">
+
 
         <LinearLayout
             android:id="@+id/buttons_first2"
@@ -36,103 +37,137 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <soup.neumorphism.NeumorphImageButton
-                android:id="@+id/tipno"
-                style="@style/Widget.Neumorph.CardView"
-                android:layout_width="match_parent"
-                android:contentDescription="@string/calendar_photo"
-                android:layout_height="160dp"
-                app:neumorph_backgroundColor="@color/colorPrimary"
-                android:layout_weight="1"
-                android:padding="30dp"
-                android:src="@drawable/calendar_icon"
-                app:neumorph_shapeType="basin" />
-
-
-
-            <TextView
-                android:id="@+id/tipno_icon_name"
+            <!-- Pair 1 -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/tipno"
-                android:textColor="@color/black"
-                android:textSize="30sp" />
+                android:orientation="horizontal">
 
+                <soup.neumorphism.NeumorphImageButton
+                    android:id="@+id/tipno"
+                    style="@style/Widget.Neumorph.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/calendar_photo"
+                    android:padding="30dp"
+                    android:src="@drawable/calendar_icon"
+                    app:neumorph_backgroundColor="@color/colorPrimary"
+                    app:neumorph_shapeType="basin" />
 
-            <soup.neumorphism.NeumorphImageButton
-                android:id="@+id/aartis"
-                style="@style/Widget.Neumorph.CardView"
-                android:contentDescription="@string/aarti_lamp_photo"
-                android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:layout_gravity="center"
-                app:neumorph_backgroundColor="@color/colorPrimary"
-                android:padding="20dp"
-                android:layout_weight="1"
-                android:src="@drawable/diya_aarti"
-                android:scaleType="fitCenter"
-                app:neumorph_shapeType="basin" />
+                <soup.neumorphism.NeumorphImageButton
+                    android:id="@+id/aartis"
+                    style="@style/Widget.Neumorph.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/aarti_lamp_photo"
+                    android:padding="20dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/diya_aarti"
+                    app:neumorph_backgroundColor="@color/colorPrimary"
+                    app:neumorph_shapeType="basin" />
 
-            <TextView
-                android:id="@+id/aartis_icon_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:gravity="center"
-                android:text="@string/aarti"
-                android:layout_weight="1"
-                android:textColor="@color/black"
-                android:textSize="30sp" />
+            </LinearLayout>
 
-            <soup.neumorphism.NeumorphImageButton
-                android:id="@+id/festivals"
-                style="@style/Widget.Neumorph.CardView"
-                android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:layout_gravity="center"
-                app:neumorph_backgroundColor="@color/colorPrimary"
-                android:padding="20dp"
-                android:layout_weight="1"
-                android:contentDescription="@string/photo_of_festivals"
-                android:src="@drawable/festivals_pooja"
-                android:scaleType="fitCenter"
-                app:neumorph_shapeType="basin" />
-
-            <TextView
-                android:id="@+id/events_icon_name"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/important_festivals"
-                android:textColor="@color/black"
-                android:textSize="30sp" />
+                android:orientation="horizontal">
 
-            <soup.neumorphism.NeumorphButton
-                android:id="@+id/share_app_btn"
-                style="@style/Widget.Neumorph.CardView"
+                <TextView
+                    android:id="@+id/tipno_icon_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/tipno"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/aartis_icon_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/aarti"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:gravity="center"
-                android:text="@string/share_application"
-                app:neumorph_backgroundColor="@color/orange"
-                app:neumorph_shadowColorDark="@color/orange_dark"
-                app:neumorph_shadowColorLight="@color/light_orange"
-                android:textColor="@color/black"
-                android:layout_marginVertical="10dp"
-                android:textStyle="italic"
-                android:textSize="20sp"
-                />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <soup.neumorphism.NeumorphImageButton
+                    android:id="@+id/festivals"
+                    style="@style/Widget.Neumorph.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/photo_of_festivals"
+                    android:padding="20dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/festivals_pooja"
+                    app:neumorph_backgroundColor="@color/colorPrimary"
+                    app:neumorph_shapeType="basin" />
+
+                <soup.neumorphism.NeumorphImageButton
+                    android:id="@+id/events"
+                    style="@style/Widget.Neumorph.CardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_weight="1"
+                    android:padding="20dp"
+                    android:src="@drawable/event_colored"
+                    app:neumorph_shapeType="basin" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/festivals_icon_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/festivals"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/events_icon_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Events"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+
+
+            </LinearLayout>
 
             <soup.neumorphism.NeumorphImageButton
                 android:id="@+id/contacts"
                 style="@style/Widget.Neumorph.CardView"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                android:padding="20dp"
                 android:layout_weight="1"
+                android:padding="20dp"
                 android:src="@drawable/pandit_monk"
                 app:neumorph_shapeType="basin" />
 
@@ -140,28 +175,37 @@
                 android:id="@+id/contacts_icon_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/brahmin_mitra_mandal"
                 android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:textColor="@color/black"
                 android:layout_weight="1"
-                android:textSize="25sp"
-                />
+                android:gravity="center"
+                android:text="@string/brahmin_mitra_mandal"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
 
+
+            <soup.neumorphism.NeumorphButton
+                android:id="@+id/share_app_btn"
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginVertical="10dp"
+                android:gravity="center"
+                android:text="@string/share_application"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                app:neumorph_backgroundColor="@color/purple_500" />
 
         </LinearLayout>
 
     </ScrollView>
 
-
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/home_ad_unit_ID">
-    </com.google.android.gms.ads.AdView>
+        ads:adUnitId="@string/home_ad_unit_ID"></com.google.android.gms.ads.AdView>
 </RelativeLayout>

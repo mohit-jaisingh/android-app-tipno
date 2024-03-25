@@ -23,36 +23,37 @@
 
         <activity
             android:name="com.SindhiManu.Tipno.DisplayAarti"
-            android:theme="@style/Theme.SindhiSangat.NoActionBar" />
+
+            />
 
         <activity
             android:name="com.SindhiManu.Tipno.DisplayFestivals"
-            android:theme="@style/Theme.SindhiSangat.NoActionBar" />
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name="com.SindhiManu.Tipno.DisplayMonth"
             android:exported="true"
             android:label="@string/title_activity_display_month"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.SindhiSangat.NoActionBar" />
+             />
 
         <activity
             android:name="com.SindhiManu.Tipno.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.SindhiSangat.NoActionBar" />
+             />
 
 
         <activity
             android:name="com.SindhiManu.Tipno.DisplayAartiMenu"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.SindhiSangat.NoActionBar" />
+             />
 
         <activity
             android:name="com.SindhiManu.Tipno.DisplayPandits"
             android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.SindhiSangat">
+            android:screenOrientation="portrait">
 
         </activity>
 
@@ -83,10 +84,14 @@
 
         <activity android:name="AddNewPandit"
             android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.SindhiSangat"
-            >
+            android:screenOrientation="portrait">
         </activity>
+
+        <activity android:name=".DisplayEvents"
+            android:exported="true"
+            android:screenOrientation="portrait">
+        </activity>
+
     </application>
 
 </manifest>

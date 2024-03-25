@@ -130,7 +130,6 @@ public class DisplayPandits extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     private List<Pandit> filterPanditData(String selectedState, List<Pandit> pandits) {
@@ -151,17 +150,17 @@ public class DisplayPandits extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                List<Pandit> pandits_ = new ArrayList<>();
+                List<Pandit> pandits = new ArrayList<>();
 
                 for(DataSnapshot data : snapshot.getChildren()){
                     Pandit pan = data.getValue(Pandit.class);
-                    pandits_.add(pan);
+                    pandits.add(pan);
                 }
 
-                List<Pandit> filteredPanditList = filterPanditData(state, pandits_);
-                if(filteredPanditList.size() == 0){
-                    //TODO: show message to email the details in text view and set its visibility accordingly.
-                }
+                List<Pandit> filteredPanditList = filterPanditData(state, pandits);
+//                if(filteredPanditList.size() == 0){
+//
+//                }
                 myAdapter.setItems(filteredPanditList);
                 myAdapter.notifyDataSetChanged();
 

@@ -17,8 +17,8 @@ import java.util.List;
 
 public class PanditAdapter extends RecyclerView.Adapter<PanditAdapter.MyViewHolder> {
 
-    Context context;
-    List<Pandit> pandits;
+    private final Context context;
+    private List<Pandit> pandits;
 
     public PanditAdapter(Context context, ArrayList<Pandit> pandits) {
         this.context = context;
@@ -46,7 +46,6 @@ public class PanditAdapter extends RecyclerView.Adapter<PanditAdapter.MyViewHold
             phoneNos = itemView.findViewById(R.id.pandit_phone_no_list);
             emails = itemView.findViewById(R.id.pandit_email_list);
 
-
         }
     }
 
@@ -62,17 +61,17 @@ public class PanditAdapter extends RecyclerView.Adapter<PanditAdapter.MyViewHold
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Pandit pandit = pandits.get(position);
         holder.panditName.setText(pandit.getName());
-        holder.address.setText(pandit.getAddress());
-        holder.city.setText(pandit.getCity());
-        holder.state.setText(pandit.getState());
+        holder.address.setText(String.format("%s,", pandit.getAddress()));
+        holder.city.setText(String.format("%s,", pandit.getCity()));
+        holder.state.setText(String.format("%s,", pandit.getState()));
         holder.pin.setText(pandit.getPin());
 
         List<String> phoneNos = pandit.getPhone_nos();
         List<String> emails = pandit.getEmail_ids();
 
-        Log.d("PanditAdapter", "phoneNos: " + phoneNos.toString());
-        Log.d("PanditAdapter", "emails: " + emails.toString());
-        Log.d("PanditAdapter", "onBindViewHolder called for position: " + position);
+        //Log.d("PanditAdapter", "phoneNos: " + phoneNos.toString());
+        //Log.d("PanditAdapter", "emails: " + emails.toString());
+        //Log.d("PanditAdapter", "onBindViewHolder called for position: " + position);
 
         PhoneNoAdapter phoneNoAdapter = new PhoneNoAdapter(context,phoneNos);
         holder.phoneNos.setAdapter(phoneNoAdapter);

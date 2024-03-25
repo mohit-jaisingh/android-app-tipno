@@ -31,12 +31,21 @@ public class DisplayMonth extends AppCompatActivity {
     boolean isLangHindi = false; // default option
     private static int curIndexOfList = 0;
     private static int curYear = 2023;
-
     private ZoomageView month, list;
-
     static int[] gridCal;
     static int[] listCalEng;
     static int[] listCalHin;
+
+    static int[] listCalHin_2024 = {R.drawable.jan_2024_h1, R.drawable.jan_2024_h2, R.drawable.feb_2024_h1,
+            R.drawable.feb_2024_h2, R.drawable.mar_2024_h1, R.drawable.mar_2024_h2, R.drawable.apr_2024_h1};
+
+    static int[] listCalEng_2024 = {R.drawable.jan_2024_1, R.drawable.jan_2024_2, R.drawable.feb_2024_1,
+            R.drawable.feb_2024_2, R.drawable.mar_2024_1, R.drawable.mar_2024_2, R.drawable.apr_2024_1};
+
+    static int[] gridCal_2024 = {R.drawable.jan_cal_2024, R.drawable.feb_cal_2024, R.drawable.mar_cal_2024,
+            R.drawable.apr_cal_2024, R.drawable.may_cal_2024, R.drawable.jun_cal_2024, R.drawable.jul_cal_2024,
+            R.drawable.aug_cal_2024, R.drawable.sep_cal_2024, R.drawable.oct_cal_2024, R.drawable.nov_cal_2024,
+            R.drawable.dec_cal_2024};
 
     static int[] gridCal_2023 = {R.drawable.jan_cal_2023, R.drawable.feb_cal_2023, R.drawable.mar_cal_2023,
             R.drawable.apr_cal_2023, R.drawable.may_cal_2023, R.drawable.jun_cal_2023, R.drawable.jul_cal_2023,
@@ -50,7 +59,7 @@ public class DisplayMonth extends AppCompatActivity {
             R.drawable.jul_2023_1,R.drawable.jul_2023_2,R.drawable.aug_2023_1, R.drawable.aug_2023_2,
             R.drawable.aug_2023_3,R.drawable.sep_2023_1,R.drawable.sep_2023_2,R.drawable.oct_2023_1,
             R.drawable.oct_2023_2,R.drawable.nov_2023_1,R.drawable.nov_2023_2,R.drawable.dec_2023_1,
-            R.drawable.dec_2023_2,R.drawable.jan_2024_1};
+            R.drawable.dec_2023_2};
 
     static int[] listCalHin_2023 = {
             R.drawable.jan_2023_h1, R.drawable.jan_2023_h2,  R.drawable.feb_2023_h1,  R.drawable.feb_2023_h2,
@@ -59,48 +68,35 @@ public class DisplayMonth extends AppCompatActivity {
             R.drawable.jul_2023_h1,R.drawable.jul_2023_h2, R.drawable.aug_2023_h1,R.drawable.aug_2023_h2,
             R.drawable.aug_2023_h3, R.drawable.sep_2023_h1, R.drawable.sep_2023_h2,R.drawable.oct_2023_h1,
             R.drawable.oct_2023_h2, R.drawable.nov_2023_h1, R.drawable.nov_2023_h2,R.drawable.dec_2023_h1,
-            R.drawable.dec_2023_h2,R.drawable.jan_2024_h1};
-
-    static int[] gridCal_2022 = {R.drawable.jan_cal, R.drawable.feb_cal, R.drawable.mar_cal, R.drawable.apr_cal,
-                  R.drawable.may_cal, R.drawable.jun_cal, R.drawable.jul_cal, R.drawable.aug_cal,
-                  R.drawable.sep_cal, R.drawable.oct_cal, R.drawable.nov_cal, R.drawable.dec_cal};
-
-    static int[] listCalEng_2022 =
-            {R.drawable.download, R.drawable.download,R.drawable.download,R.drawable.download,
-            R.drawable.download,R.drawable.download,R.drawable.apr_2022_1, R.drawable.apr_2022_2,
-            R.drawable.may_2022_1, R.drawable.may_2022_2, R.drawable.jun_2022_1, R.drawable.jun_2022_2,
-            R.drawable.jul_2022_1, R.drawable.jul_2022_2, R.drawable.aug_2022_1, R.drawable.aug_2022_2,
-            R.drawable.sep_2022_1, R.drawable.sep_2022_2, R.drawable.oct_2022_1, R.drawable.oct_2022_2,
-            R.drawable.nov_2022_1, R.drawable.nov_2022_2, R.drawable.dec_2022_1, R.drawable.dec_2022_2};
-
-    static int[] listCalHin_2022 =
-            {R.drawable.download, R.drawable.download,R.drawable.download,R.drawable.download, R.drawable.download, R.drawable.download, R.drawable.apr_2022_h1, R.drawable.apr_2022_h2,
-            R.drawable.may_2022_h1, R.drawable.may_2022_h2, R.drawable.jun_2022_h1, R.drawable.jun_2022_h2,
-            R.drawable.jul_2022_h1, R.drawable.jul_2022_h2, R.drawable.aug_2022_h1, R.drawable.aug_2022_h2,
-            R.drawable.sep_2022_h1, R.drawable.sep_2022_h2, R.drawable.oct_2022_h1, R.drawable.oct_2022_h2,
-            R.drawable.nov_2022_h1, R.drawable.nov_2022_h2, R.drawable.dec_2022_h1, R.drawable.dec_2022_h2};
+            R.drawable.dec_2023_h2};
 
     public static void setCurMonth(int month){
         curMonth = month;
         curIndexOfList=(curMonth-1)*2;
     }
-    public static void setCurYear(int year) {curYear = year; setCalendarResources();}
+    public static void setCurYear(int year) {
+        curYear = year;
+        setCalendarResources();
+    }
 
     public void moveToNextYear() {
-        if(curYear==2022) {
+
+        if(curYear==2023) {
             setCurMonth(1);
-            setCurYear(2023);
+            setCurYear(2024);
         }
-        else {
+        else{
             Toast.makeText(this, "That's All!", Toast.LENGTH_SHORT).show();
         }
     }
 
     public void moveToPrevYear() {
-        if (curYear == 2023) {
+
+        if (curYear == 2024) {
             setCurMonth(12);
-            setCurYear(2022);
-        }else{
+            setCurYear(2023);
+        }
+        else{
             Toast.makeText(this, "That's All!", Toast.LENGTH_SHORT).show();
         }
     }
@@ -114,18 +110,17 @@ public class DisplayMonth extends AppCompatActivity {
 
     private static void setCalendarResources(){
         switch (curYear){
-            case 2022:
-                gridCal = gridCal_2022;
-                listCalEng = listCalEng_2022;
-                listCalHin = listCalHin_2022;
-                break;
-
             case 2023:
                 gridCal = gridCal_2023;
                 listCalEng = listCalEng_2023;
                 listCalHin = listCalHin_2023;
                 break;
 
+            case 2024:
+                gridCal = gridCal_2024;
+                listCalEng = listCalEng_2024;
+                listCalHin = listCalHin_2024;
+                break;
         }
     }
 
@@ -134,14 +129,12 @@ public class DisplayMonth extends AppCompatActivity {
         final Configuration override = new Configuration(newBase.getResources().getConfiguration());
         override.fontScale = 1.0f;
         applyOverrideConfiguration(override);
-
         super.attachBaseContext(newBase);
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         //disabling screen capture
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
 
@@ -158,26 +151,22 @@ public class DisplayMonth extends AppCompatActivity {
             langOption.setVisibility(View.INVISIBLE);
         }else langOption.setVisibility(View.VISIBLE);
 
-        try{
-            if(isGridCal){ //When Activity is called, display corresponding Month in chosen view.
-                Glide.with(DisplayMonth.this).load(gridCal[curMonth-1]).into(month);
-            }else  {
-
-                if(curYear==2023 && curMonth>=9){
-                    Glide.with(DisplayMonth.this).load(listCalEng[(curIndexOfList=(curMonth-1)*2)+1]).into(list);
-                }else{
-                    Glide.with(DisplayMonth.this).load(listCalEng[curIndexOfList=(curMonth-1)*2]).into(list);
+        try {
+            if (isGridCal) {
+                Glide.with(DisplayMonth.this).load(gridCal[curMonth - 1]).into(month);
+            } else {
+                if (curYear == 2023) {
+                    curIndexOfList = (curMonth >= 9) ? (curMonth - 1) * 2 + 1 : (curMonth - 1) * 2;
+                } else {
+                    curIndexOfList = (curMonth - 1) * 2;
                 }
-
+                Glide.with(DisplayMonth.this).load(listCalEng[curIndexOfList]).into(list);
                 viewFlipper.showNext();
-
-                if(curYear == 2022 && listCalEng[curIndexOfList]== R.drawable.download) {
-                    Toast.makeText(DisplayMonth.this, "Sorry, data for month " +curMonth + ", "+ curYear +" not available.",
-                            Toast.LENGTH_SHORT).show();
-                }
             }
-        }catch (Exception e){
-            Toast.makeText(this,"Data Retrieve error", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(this, "Data will be available by Cheti Chand 2024", Toast.LENGTH_SHORT).show();
+            Glide.with(DisplayMonth.this).load(R.drawable.download).into(list);
+            viewFlipper.showNext();
         }
 
         AdView mAdView = findViewById(R.id.adView_month);
@@ -199,10 +188,6 @@ public class DisplayMonth extends AppCompatActivity {
                         moveToPrevYear();
                         Glide.with(DisplayMonth.this).load(listCalEng[curIndexOfList]).into(list);
                     }
-                    if(curYear == 2022 && listCalEng[curIndexOfList+1]== R.drawable.jhulelal_murti) {
-                        Toast.makeText(DisplayMonth.this, "Sorry, data for month " +curMonth +" not available.",
-                                Toast.LENGTH_SHORT).show();
-                    }
                 }
             }
         });
@@ -211,7 +196,7 @@ public class DisplayMonth extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(isGridCal){
-                    if(curMonth< gridCal_2022.length) curMonth++;
+                    if(curMonth < 12) curMonth++;
                     else moveToNextYear();
                     Glide.with(DisplayMonth.this).load(gridCal[curMonth-1]).into(month);
                 }else {
@@ -221,13 +206,11 @@ public class DisplayMonth extends AppCompatActivity {
                         }else{
                             Glide.with(DisplayMonth.this).load(listCalEng[++curIndexOfList]).into(list);
                         }
-                        if(curYear == 2022 && listCalEng[curIndexOfList]== R.drawable.jhulelal_murti) {
-                            Toast.makeText(DisplayMonth.this, " Sorry, data for month  " +curMonth +" not available.",
-                                    Toast.LENGTH_LONG).show();
-                        }
                         curMonth = (curIndexOfList+1) / 2;
                     }else{
+                        int curY = curYear;
                         moveToNextYear();
+                        if(curY == curYear) return;
                         if(isLangHindi){
                             Glide.with(DisplayMonth.this).load(listCalHin[curIndexOfList]).into(list);
                         }else{
@@ -236,7 +219,6 @@ public class DisplayMonth extends AppCompatActivity {
                     }
                 }
             }
-
         });
 
         calOption.setOnClickListener(new View.OnClickListener() {
@@ -245,24 +227,28 @@ public class DisplayMonth extends AppCompatActivity {
                 if(isGridCal){
                     isGridCal = false;
                     langOption.setVisibility(View.VISIBLE);
-                    if(isLangHindi){
-                        Glide.with(DisplayMonth.this).load(listCalHin[curIndexOfList=(curMonth-1)*2]).into(list);
-                    }else{
-                        Glide.with(DisplayMonth.this).load(listCalEng[curIndexOfList=(curMonth-1)*2]).into(list);
+                    curIndexOfList = (curMonth-1)*2;
+                    if(curMonth > 8) curIndexOfList++;
+
+                    if((curMonth-1)*2 < listCalEng.length) {
+                        if (isLangHindi) {
+                            Glide.with(DisplayMonth.this).load(listCalHin[curIndexOfList]).into(list);
+                        } else {
+                            Glide.with(DisplayMonth.this).load(listCalEng[curIndexOfList]).into(list);
+                        }
+                    } else{
+                        Toast.makeText(DisplayMonth.this, "Data will be available by Cheti Chand 2024", Toast.LENGTH_SHORT).show();
                     }
                     viewFlipper.showNext();
-                }
-                else {
+                } else {
                     isGridCal = true;
                     langOption.setVisibility(View.INVISIBLE);
+                    if(curIndexOfList >= 16) curIndexOfList--;
                     curMonth = Math.min(((curIndexOfList / 2) + 1), 12);
                     Glide.with(DisplayMonth.this).load(gridCal[curMonth-1]).into(month);
                     viewFlipper.showNext();
                 }
-
-
             }
-
         });
 
         langOption.setOnClickListener(new View.OnClickListener() {
@@ -276,12 +262,8 @@ public class DisplayMonth extends AppCompatActivity {
                     isLangHindi = true;
                     Glide.with(DisplayMonth.this).load(listCalHin[curIndexOfList]).into(list);
                     langOption.setBackgroundResource(R.drawable.eng_lang_icon);
-
                 }
             }
         });
-
-
     }
-
 }

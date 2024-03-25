@@ -10,9 +10,7 @@ Pandit {
     private String address;
     private String city;
     private String state;
-
     private String pin;
-
 
     private ArrayList<String> phone_nos;
     private ArrayList<String> email_ids;
@@ -39,8 +37,6 @@ Pandit {
 
     public Pandit(String name, String address){
         this(name, address,null,null);
-
-
     }
 
     public String getName() {

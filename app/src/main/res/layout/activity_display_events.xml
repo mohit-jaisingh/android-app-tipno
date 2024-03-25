@@ -1,22 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:orientation="vertical"
-    android:paddingHorizontal="40dp">
+    android:theme="@style/Theme.SindhiSangat"
+    android:orientation="vertical">
 
-    <soup.neumorphism.NeumorphTextView
+    <TextView
         android:id="@+id/header_events_title"
         style="@style/Widget.Neumorph.TextView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_margin="15dp"
-        android:text="@string/events"
+        android:layout_marginHorizontal="15dp"
+        android:text="Events"
         android:textColor="@color/black"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textAlignment="center"
+        android:textStyle="bold"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:tabTextColor="@color/unselected_tab_text_color"
+        android:layout_below="@id/header_events_title"
+        app:tabRippleColor="@color/purple_200"
+        app:tabSelectedTextColor="@color/purple_700"
+        app:tabMode="fixed"
+        app:tabGravity="fill"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tab_layout"
+        android:background="@android:color/white"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true" />
+
+    <!-- Error Layout -->
+    <LinearLayout
+        android:id="@+id/error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tab_layout"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/error_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/error_message"
+            android:textColor="@color/orange_dark"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </LinearLayout>
+    <!-- RecyclerView for displaying events -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/event_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tab_layout"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"/>
 
 </RelativeLayout>

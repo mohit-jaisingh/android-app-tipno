@@ -8,9 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.view.View;
-import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -21,24 +19,17 @@ import androidx.core.app.NotificationCompat;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.play.core.review.ReviewInfo;
 import com.google.android.play.core.review.ReviewManager;
 import com.google.android.play.core.review.ReviewManagerFactory;
-import com.google.android.play.core.review.model.ReviewErrorCode;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
 
 import soup.neumorphism.NeumorphButton;
+import soup.neumorphism.NeumorphImageButton;
 
 public class HomePage extends AppCompatActivity {
 
@@ -105,14 +96,14 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-//        ImageButton eventsButton = findViewById(R.id.events);
-//
-//        eventsButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                openEvents();
-//            }
-//        });
+        NeumorphImageButton eventsButton = findViewById(R.id.events);
+
+        eventsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openEvents();
+            }
+        });
 
         ImageButton BMM_Pandits = findViewById(R.id.contacts);
 
@@ -150,10 +141,8 @@ public class HomePage extends AppCompatActivity {
 
 
     public void openTipno() {
-
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-
     }
 
     public void displayFestivals() {
@@ -161,11 +150,10 @@ public class HomePage extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    public void openEvents(){
-//
-//        Intent intent = new Intent(this,Events.class);
-//        startActivity(intent);
-//    }
+    public void openEvents(){
+        Intent intent = new Intent(this, DisplayEvents.class);
+        startActivity(intent);
+    }
 
     public void fetchPanditsAndDisplay(){
         Intent intent = new Intent(this, DisplayPandits.class);
@@ -224,7 +212,5 @@ public class HomePage extends AppCompatActivity {
 
         return builder.build();
     }
-
-
 
 }

@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Add your UI components for upcoming events here -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ongoing_event_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/no_ongoing_events_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="No Ongoing Events"
+        android:visibility="gone"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_purple" />
+
+</RelativeLayout>
+

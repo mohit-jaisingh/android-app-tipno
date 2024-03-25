@@ -15,14 +15,14 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
-        android:text="@string/important_festivals"
+        android:text="@string/festivals"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <ScrollView
         android:id="@id/scroll_view"
-        android:contentDescription="@string/important_festivals"
+        android:contentDescription="@string/festivals"
         android:layout_below="@+id/header_festivals_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -30,8 +30,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <ViewFlipper
                 android:id="@+id/viewFlipper_fest"
@@ -50,7 +49,6 @@
                     app:zoomage_animateOnReset="true"
                     app:zoomage_autoResetMode="UNDER"
                     app:zoomage_restrictBounds="true"
-
                     />
 
                 <com.jsibbold.zoomage.ZoomageView
@@ -64,8 +62,8 @@
                     app:zoomage_animateOnReset="true"
                     app:zoomage_autoResetMode="UNDER"
                     app:zoomage_restrictBounds="true"
-
                     />
+
             </ViewFlipper>
 
         </LinearLayout>
@@ -79,7 +77,6 @@
         android:layout_below="@id/scroll_view"
         android:layout_above="@id/adView_fest"
         android:orientation="horizontal">
-
 
         <soup.neumorphism.NeumorphButton
             style="@style/Widget.Neumorph.Button"
@@ -95,7 +92,6 @@
             app:neumorph_backgroundColor="@color/orange"
             app:neumorph_shadowColorDark="@color/orange_dark"
             android:text="@string/previous"
-
             />
 
         <soup.neumorphism.NeumorphButton
@@ -115,9 +111,6 @@
             android:text="@string/next"
             />
     </LinearLayout>
-
-
-
 
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"

@@ -14,7 +14,8 @@
     <string name="aarti_lamp_photo">Aarti Lamp Photo</string>
     <string name="aarti">Aarti</string>
     <string name="photo_of_festivals">Photo of Festivals</string>
-    <string name="important_festivals">Important Festivals</string>
+    <string name="festivals">Festivals</string>
+<!--    <string name="important_festivals">Important Festivals</string>-->
     <string name="sindhi_sangat">Sindhi Sangat</string>
     <string name="events">Events</string>
     <string name="change_language">change language</string>
